@@ -30,9 +30,13 @@ xl: min-width: 1280px
 
 body {
   margin: 0;
-  background: black;
+  background-color: black;
   color: white;
   text-align: center;
   font-family: Raleway, sans-serif;
+  background-image: url('./assets//imgs/cyberBG.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 

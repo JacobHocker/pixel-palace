@@ -1,0 +1,51 @@
+.homePage{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+    width: 100%;
+    padding-bottom: 20rem;
+}
+
+.title{
+    width: 100%;
+    font-family: PressStart, cursive;
+    background: linear-gradient(to right, #ff0000 0%, #0105f7 10%, #78f701 20%, #f701ba 30%, #01f7eb 40%, #9d01f7 50%, #000 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 0%;
+}
+.title h1{
+    font-size: 2.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gamesLinkContainer{
+    margin-top: 2rem;
+    font-family: PressStart, cursive;
+}
+
+/* ==== SMALL DEVICES ==== */
+@media screen and (min-width: 500px) and (max-width: 768px){
+    .title h1{
+        font-size: 3.25rem;
+    }
+}
+/* ==== MEDIUM DEVICES ==== */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .title h1{
+        font-size: 3.75rem;
+    }
+}
+/* ==== LARGE DEVICES ==== */
+@media screen and (min-width: 1024px) {
+    .title h1{
+        font-size: 4.25rem;
+    }
+}

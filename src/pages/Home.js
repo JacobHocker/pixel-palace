@@ -1,10 +1,34 @@
-import React from 'react'
+import React from 'react';
+import './Home.css';
+import { motion } from 'framer-motion';
 
 const Home = () => {
+
+    
+    
     return (
-        <div className='homePage'>
-            <h1>Pixel Palace</h1>
-        </div>
+        <main className='homePage'>
+            <motion.div
+            className="title"
+            animate={{ backgroundSize: "200%" }}
+            transition={{ duration: 8, repeat: Infinity }}
+            >
+                <h1>
+                    <span >PIXEL</span>
+                    <span>PALACE</span>
+                </h1>
+            </motion.div>
+
+
+            <div className='gamesLinkContainer'>
+                <h3>Games</h3>
+                <div>
+                    <a href='/tetris' className='gameLink'>Tetris</a>
+                    <a href='/wordle' className='gameLink'>Wordle</a>
+                </div>
+            </div>
+            
+        </main>
     )
 }
 
