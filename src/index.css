@@ -1,0 +1,38 @@
+/* === BREAKPOINTS === */
+/*
+sm: min-width: 640px
+md: min-width: 768px
+lg: min-width: 1024px
+xl: min-width: 1280px
+*/
+
+/* ====== FONTS ====== */
+@font-face {
+  font-family: 'Pixel';
+  src: url('assets/fonts/Pixel-LCD-7.woff') format('woff');
+}
+@font-face {
+  font-family: 'PressStart';
+  src: url('assets/fonts/PressStart2P-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Monoton';
+  src: url('assets/fonts/Monoton-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Instrument';
+  src: url('assets/fonts/InstrumentSerif-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('assets/fonts/Raleway-Regular.woff') format('woff');
+}
+
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  text-align: center;
+  font-family: Raleway, sans-serif;
+}
+
