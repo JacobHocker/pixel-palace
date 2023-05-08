@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import CarouselContainer from '../components/CarouselContainer';
 import { motion } from 'framer-motion';
 
 const Home = () => {
@@ -24,10 +25,10 @@ const Home = () => {
                 <div className="gamesLinkTitle">
                     <h3>Choose A Game</h3>
                 </div>
-                <div className="gameLinks">
-                    <a href='/tetris' className='gameLink'>Tetris</a>
-                    <a href='/wordle' className='gameLink'>Wordle</a>
+                <div className='carouselContainer'>
+                    <CarouselContainer />
                 </div>
+                
             </div>
             
         </main>

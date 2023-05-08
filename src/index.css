@@ -34,9 +34,14 @@ body {
   color: white;
   text-align: center;
   font-family: Raleway, sans-serif;
+  
+}
+
+
+
+.App{
   background-image: url('./assets//imgs/cyberBG.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-

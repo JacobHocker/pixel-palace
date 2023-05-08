@@ -1,10 +1,9 @@
 .homePage{
-    margin-top: 2rem;
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5rem;
     width: 100%;
     padding-bottom: 20rem;
 }
@@ -32,33 +31,42 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
 }
 .gamesLinkTitle{
     margin-bottom: 2rem;
 }
-.gameLinks{
-    padding: 0.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+
+.carouselContainer{
+    width: 90%;
 }
+
 
 /* ==== SMALL DEVICES ==== */
 @media screen and (min-width: 500px) and (max-width: 768px){
-    .title h1{
-        font-size: 3.25rem;
+    .homeTitle h1{
+        font-size: 3rem;
+    }
+    .carouselContainer{
+        width: 80%;
     }
 }
 /* ==== MEDIUM DEVICES ==== */
 @media screen and (min-width: 768px) and (max-width: 1024px){
-    .title h1{
+    .homeTitle h1{
         font-size: 3.75rem;
+    }
+    .carouselContainer{
+        width: 60%;
     }
 }
 /* ==== LARGE DEVICES ==== */
 @media screen and (min-width: 1024px) {
-    .title h1{
-        font-size: 4.25rem;
+    .homeTitle h1{
+        font-size: 4.rem;
+    }
+    .carouselContainer{
+        width: 60%;
     }
 }

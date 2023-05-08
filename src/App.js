@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Tetris from './games/tetris/Tetris';
@@ -6,7 +6,7 @@ import Wordle from './games/wordle/Wordle';
 
 
 const App = () => {
-
+  const [bg, setBg] = useState("purple");
   return (
     <div className="App">
       <Routes>
