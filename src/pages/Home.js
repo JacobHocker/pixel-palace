@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <main className='homePage'>
             <motion.div
-            className="title"
+            className="homeTitle"
             animate={{ backgroundSize: "200%" }}
             transition={{ duration: 8, repeat: Infinity }}
             >
@@ -21,8 +21,10 @@ const Home = () => {
 
 
             <div className='gamesLinkContainer'>
-                <h3>Games</h3>
-                <div>
+                <div className="gamesLinkTitle">
+                    <h3>Choose A Game</h3>
+                </div>
+                <div className="gameLinks">
                     <a href='/tetris' className='gameLink'>Tetris</a>
                     <a href='/wordle' className='gameLink'>Wordle</a>
                 </div>

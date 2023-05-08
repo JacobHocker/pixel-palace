@@ -9,7 +9,7 @@
     padding-bottom: 20rem;
 }
 
-.title{
+.homeTitle{
     width: 100%;
     font-family: PressStart, cursive;
     background: linear-gradient(to right, #ff0000 0%, #0105f7 10%, #78f701 20%, #f701ba 30%, #01f7eb 40%, #9d01f7 50%, #000 100%);
@@ -18,7 +18,7 @@
     color: transparent;
     background-size: 0%;
 }
-.title h1{
+.homeTitle h1{
     font-size: 2.75rem;
     display: flex;
     flex-direction: column;
@@ -29,6 +29,19 @@
 .gamesLinkContainer{
     margin-top: 2rem;
     font-family: PressStart, cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.gamesLinkTitle{
+    margin-bottom: 2rem;
+}
+.gameLinks{
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
 /* ==== SMALL DEVICES ==== */
