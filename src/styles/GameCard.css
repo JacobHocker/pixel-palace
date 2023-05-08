@@ -1,25 +1,22 @@
-.slideContainer{
+.cardContainer{
     width: 100%;
     border: 3px solid rgba(255, 255, 255, 0.8);
     border-radius: 20px;
     background-color: #ad13d3cc;
     font-family: Pixel;
 }
-.slideContainer a{
+.cardContainer a{
     text-decoration: none;
 }
-.slideContainer:hover{
+.cardContainer:hover{
     cursor: pointer;
 }
-.slideImage{
+.cardImage{
     width: 100%;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
 }
-.slideLink{
+.cardLink{
     font-size: 1.5rem;
     color: rgba(255, 255, 255, 0.904);
-}
-.carousel.carousel-slider .control-arrow{
-    border-radius: 25px;
 }

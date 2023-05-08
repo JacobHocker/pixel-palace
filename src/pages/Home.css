@@ -38,9 +38,6 @@
     margin-bottom: 2rem;
 }
 
-.carouselContainer{
-    width: 90%;
-}
 
 
 /* ==== SMALL DEVICES ==== */
@@ -48,25 +45,16 @@
     .homeTitle h1{
         font-size: 3rem;
     }
-    .carouselContainer{
-        width: 80%;
-    }
 }
 /* ==== MEDIUM DEVICES ==== */
 @media screen and (min-width: 768px) and (max-width: 1024px){
     .homeTitle h1{
         font-size: 3.75rem;
     }
-    .carouselContainer{
-        width: 60%;
-    }
 }
 /* ==== LARGE DEVICES ==== */
 @media screen and (min-width: 1024px) {
     .homeTitle h1{
         font-size: 4.rem;
-    }
-    .carouselContainer{
-        width: 60%;
     }
 }

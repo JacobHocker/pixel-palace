@@ -1,7 +1,8 @@
 import React from 'react';
 import './Home.css';
-import CarouselContainer from '../components/CarouselContainer';
+
 import { motion } from 'framer-motion';
+import GameChoices from '../components/GameChoices';
 
 const Home = () => {
 
@@ -25,9 +26,7 @@ const Home = () => {
                 <div className="gamesLinkTitle">
                     <h3>Choose A Game</h3>
                 </div>
-                <div className='carouselContainer'>
-                    <CarouselContainer />
-                </div>
+                <GameChoices />
                 
             </div>
             
