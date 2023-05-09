@@ -24,7 +24,7 @@ const Home = () => {
 
             <div className='gamesLinkContainer'>
                 <div className="gamesLinkTitle">
-                    <h3>Choose A Game</h3>
+                    <h3>Choose Game</h3>
                 </div>
                 <GameChoices />
                 

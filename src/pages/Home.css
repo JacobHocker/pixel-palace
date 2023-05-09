@@ -35,7 +35,12 @@
     width: 100%;
 }
 .gamesLinkTitle{
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.5rem;
 }
 
 
@@ -45,11 +50,19 @@
     .homeTitle h1{
         font-size: 3rem;
     }
+    .gamesLinkTitle{
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
 }
 /* ==== MEDIUM DEVICES ==== */
 @media screen and (min-width: 768px) and (max-width: 1024px){
     .homeTitle h1{
         font-size: 3.75rem;
+    }
+    .gamesLinkTitle{
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
     }
 }
 /* ==== LARGE DEVICES ==== */
