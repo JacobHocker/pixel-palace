@@ -47,21 +47,21 @@ body {
 
 
 
-.purpleApp{
+.cyberApp{
   background-image: url('./assets/imgs/cyberBG.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-.darkApp{
+.retroApp{
   background-image: url('./assets/imgs/darkBGlandscape.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-.neonApp{
+.modernApp{
   background-image: url('./assets/imgs/neonBg.jpeg');
   background-repeat: no-repeat;
   background-size: cover;

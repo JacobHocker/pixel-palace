@@ -5,20 +5,23 @@ import { motion } from 'framer-motion';
 import GameChoices from '../components/GameChoices';
 import ThemeButton from '../components/ThemeButton';
 
+
 const Home = ({ setBg, bg }) => {
+    
 
     const setDarkTheme = () => {
-        setBg("dark");
+        setBg("retro");
     };
     const setPurpleTheme = () => {
-        setBg("purple");
+        setBg("cyber");
     };
     const setNeonTheme = () => {
-        setBg("neon");
+        setBg("modern");
     };
 
     return (
         <main className='homePage'>
+
             <motion.div
             className="homeTitle"
             animate={{ backgroundSize: "200%" }}
@@ -29,6 +32,7 @@ const Home = ({ setBg, bg }) => {
                     <span>PALACE</span>
                 </h1>
             </motion.div>
+
             <div className='themeSelection'>
                 <div className='themeHeader'>
                     <h3>Themes</h3>
@@ -37,21 +41,21 @@ const Home = ({ setBg, bg }) => {
                     <ThemeButton 
                     bg={bg} 
                     callback={setPurpleTheme} 
-                    text={"Cyber Purple"}
-                    value={"purple"}
+                    text={"Cyber"}
+                    value={"cyber"}
                     />
                     
                     <ThemeButton 
                     bg={bg} 
                     callback={setDarkTheme} 
-                    text={"Retro Dark"} 
-                    value={"dark"}
+                    text={"Retro"} 
+                    value={"retro"}
                     />
                     <ThemeButton 
                     bg={bg} 
                     callback={setNeonTheme} 
-                    text={"Modern Neon"} 
-                    value={"neon"}
+                    text={"Modern"} 
+                    value={"modern"}
                     />
                 </div>
             </div>

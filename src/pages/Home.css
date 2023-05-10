@@ -65,7 +65,7 @@
 }
 .themeButtonContainer{
     display: grid;
-    grid-template-columns:  1fr 1fr;
+    grid-template-columns:  1fr 1fr 1fr;
     gap: 0.5rem;
 }
 
@@ -95,7 +95,7 @@
         font-size: 2.5rem;
     }
     .themeButtonContainer{
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr ;
     }
 }
 /* ==== LARGE DEVICES ==== */
