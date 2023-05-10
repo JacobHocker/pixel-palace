@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import '../styles/GameCard.css';
+import './styles/GameCard.css';
 
 const GameCard = ({ link, title, img}) => {
     return (

@@ -27,6 +27,14 @@ xl: min-width: 1280px
   font-family: 'Raleway';
   src: url('assets/fonts/Raleway-Regular.woff') format('woff');
 }
+@font-face {
+  font-family: 'Videophreak';
+  src: url('assets/fonts/Videophreak.woff') format('woff');
+}
+@font-face {
+  font-family: 'AstronBoy';
+  src: url('assets/fonts/AstronBoyRg-Regular.woff') format('woff');
+}
 
 body {
   margin: 0;
@@ -39,8 +47,15 @@ body {
 
 
 
-.App{
-  background-image: url('./assets//imgs/cyberBG.jpeg');
+.purpleApp{
+  background-image: url('./assets/imgs/cyberBG.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.darkApp{
+  background-image: url('./assets/imgs/darkBGlandscape.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

@@ -1,6 +1,6 @@
 import React from 'react';
 import GameCard from './GameCard';
-import '../styles/GameChoices.css';
+import './styles/GameChoices.css';
 import { GamesInfo } from '../assets/helpers/gameInfo';
 
 
