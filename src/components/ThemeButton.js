@@ -1,18 +1,12 @@
 import React from 'react';
 import './styles/ThemeButton.css';
-import { motion } from 'framer-motion';
 
-const ThemeButton = ({ callback, text }) => {
+
+const ThemeButton = ({ callback, text, bg, value }) => {
     return (
-        <motion.button onClick={callback} className='themeButton'
-        whileHover={{
-                scale: [1, 1.2, 1.4, 1, 1],
-                borderRadius: ["20%", "20%" , "50%", "50%", "20%"],
-                transition: { duration: 2, repeat: Infinity },
-            }}
-        >
+        <button onClick={callback} className={bg === value ? 'activeThemeButton' : 'themeButton'}>
             {text}
-        </motion.button>
+        </button>
     )
 }
 

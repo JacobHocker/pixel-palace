@@ -60,3 +60,10 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+.neonApp{
+  background-image: url('./assets/imgs/neonBg.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

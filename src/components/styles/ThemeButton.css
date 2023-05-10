@@ -1,3 +1,49 @@
 .themeButton {
-    font-family: AstronBoy, cursive;
+    font-family: Pixel, cursive;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 1rem;
+    padding: 0.75rem 0.75rem;
+    color: white;
+    background: transparent;
+    border: 1.5px solid rgb(0, 217, 255);
+    outline: none;
+    border-radius: 5px;
+    transition: 0.25s ease-in-out;
+}
+.themeButton:hover{
+    cursor: pointer;
+    background: rgba(0, 217, 255, 0.582);
+}
+.activeThemeButton {
+    font-family: Pixel, cursive;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 0.75rem 0.75rem;
+    color: white;
+    background: rgba(204, 0, 255, 0.555);
+    border: 1.5px solid rgb(204, 0, 255);
+    outline: none;
+    border-radius: 5px;
+}
+.activeThemeButton:hover{
+    cursor: pointer;
+}
+
+
+/* ==== SMALL DEVICES ==== */
+@media screen and (min-width: 500px) and (max-width: 768px){
+    
+}
+/* ==== MEDIUM DEVICES ==== */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    
+    
+}
+/* ==== LARGE DEVICES ==== */
+@media screen and (min-width: 1024px) {
+    
 }

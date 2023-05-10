@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import GameChoices from '../components/GameChoices';
 import ThemeButton from '../components/ThemeButton';
 
-const Home = ({ setBg }) => {
+const Home = ({ setBg, bg }) => {
 
     const setDarkTheme = () => {
         setBg("dark");
@@ -13,7 +13,9 @@ const Home = ({ setBg }) => {
     const setPurpleTheme = () => {
         setBg("purple");
     };
-
+    const setNeonTheme = () => {
+        setBg("neon");
+    };
 
     return (
         <main className='homePage'>
@@ -29,11 +31,28 @@ const Home = ({ setBg }) => {
             </motion.div>
             <div className='themeSelection'>
                 <div className='themeHeader'>
-                    <h3>Change Theme</h3>
+                    <h3>Themes</h3>
                 </div>
                 <div className='themeButtonContainer'>
-                    <ThemeButton callback={setPurpleTheme} text={"Cyber Purple"} />
-                    <ThemeButton callback={setDarkTheme} text={"Retro Dark"} />
+                    <ThemeButton 
+                    bg={bg} 
+                    callback={setPurpleTheme} 
+                    text={"Cyber Purple"}
+                    value={"purple"}
+                    />
+                    
+                    <ThemeButton 
+                    bg={bg} 
+                    callback={setDarkTheme} 
+                    text={"Retro Dark"} 
+                    value={"dark"}
+                    />
+                    <ThemeButton 
+                    bg={bg} 
+                    callback={setNeonTheme} 
+                    text={"Modern Neon"} 
+                    value={"neon"}
+                    />
                 </div>
             </div>
 

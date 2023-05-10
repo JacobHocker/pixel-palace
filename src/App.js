@@ -17,9 +17,9 @@ const App = () => {
     window.localStorage.setItem('bg', `${bg}`)
   }, [bg])
   return (
-    <div className={bg === "purple" ? "purpleApp" : bg === "dark" ? "darkApp" : "neonApp"}>
+    <div className={bg === "purple" ? "purpleApp" : bg === "dark" ? "darkApp" : bg === "neon" ? "neonApp" : "null"}>
       <Routes>
-        <Route element={<Home setBg={setBg} />} path="/" />
+        <Route element={<Home bg={bg} setBg={setBg} />} path="/" />
         <Route element={<Tetris />} path="/tetris" />
         <Route element={<Wordle />} path="/wordle" />
       </Routes>
