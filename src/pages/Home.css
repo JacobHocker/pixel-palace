@@ -65,7 +65,7 @@
 }
 .themeButtonContainer{
     display: grid;
-    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-columns:  1fr 1fr;
     gap: 0.5rem;
 }
 
@@ -80,6 +80,9 @@
     }
     .themeHeader{
         font-size: 2.25rem;
+    }
+    .themeButtonContainer{
+        grid-template-columns:  1fr 1fr 1fr;
     }
     
 }

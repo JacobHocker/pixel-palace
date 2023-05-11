@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import Tetris from './games/tetris/Tetris';
 import Wordle from './games/wordle/Wordle';
 import Sidebar from './components/Sidebar';
+import About from './pages/about/About';
+import GamesPage from './pages/gamesPage/GamesPage';
 
 
 const App = () => {
@@ -23,6 +25,8 @@ const App = () => {
       <Sidebar />
       <Routes>
         <Route element={<Home bg={bg} setBg={setBg} />} path="/" />
+        <Route element={<About />} path='/about' />
+        <Route element={<GamesPage />} path="/games" />
         <Route element={<Tetris />} path="/tetris" />
         <Route element={<Wordle />} path="/wordle" />
       </Routes>
