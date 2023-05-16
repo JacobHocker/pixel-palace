@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledStartButton = styled.div`
-    box-sizing: border-box;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,17 +15,21 @@ export const StyledStartButton = styled.div`
     margin: 0 0 10px 0;
     padding: 10px;
     cursor: pointer;
+    transition: 0.25s ease-in;
 
     :hover{
-        border: 1px solid red;
+        border: 4px solid green;
     }
     @media screen and (min-width: 500px) and (max-width: 768px){
         font-size: 1rem;
+        box-sizing: border-box;
     }
     @media screen and (min-width: 768px) and (max-width: 1024px){
         font-size: 1rem;
+        box-sizing: border-box;
     }
     @media screen and (min-width: 1024px) {
         font-size: 1.25rem;
+        box-sizing: border-box;
     }
 `;

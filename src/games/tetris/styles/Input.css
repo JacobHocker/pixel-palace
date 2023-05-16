@@ -1,0 +1,71 @@
+.downMobileInput{
+    font-size: 2rem;
+    background: #000;
+    border: 3px solid #333;
+    box-shadow: 0 -5px #333 ;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+}
+.downMobileInput:active{
+    border-color: red;
+    box-shadow: 0 -5px red;
+}
+
+.leftMobileInput{
+    font-size: 2rem;
+    background: #000;
+    border: 3px solid #333;
+    box-shadow: 6px 0 #333 ;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+}
+.leftMobileInput:active{
+    border-color: red;
+    box-shadow: 6px 0 red;
+}
+
+.rightMobileInput{
+    font-size: 2rem;
+    background: #000;
+    border: 3px solid #333;
+    box-shadow: -6px 0 #333 ;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+}
+.rightMobileInput:active{
+    border-color: red;
+    box-shadow: -6px 0 red;
+}
+
+.rotateMobileInput{
+    font-size: 2rem;
+    background: #000;
+    border: 3px solid #333;
+    box-shadow: 0 5px #333 ;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+}
+.rotateMobileInput:active{
+    border-color: red;
+    box-shadow: 0 5px red;
+}

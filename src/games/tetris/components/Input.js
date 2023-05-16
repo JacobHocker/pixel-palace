@@ -1,8 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react';
+import '../styles/Input.css';
 
-const Input = () => {
+const Input = ({ display, direction, callback }) => {
+    
+
     return (
-        <div>Input</div>
+        <button className={direction === "down" ? 
+        'downMobileInput'
+        :
+        direction === "left" ?
+        'leftMobileInput'
+        :
+        direction === "right" ?
+        'rightMobileInput'
+        :
+        direction === "rotate" ?
+        'rotateMobileInput'
+        :
+        'N/A'
+        }
+        onClick={callback}
+        >
+            {display}
+        </button>
     )
 }
 

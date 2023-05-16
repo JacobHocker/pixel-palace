@@ -1,7 +1,15 @@
 import styled from "styled-components";
 
 export const StyledInputsWrapper = styled.div`
-    background: #FFF;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     padding: 1rem;
-    width: 100%;
+
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+        display: none;
+    }
+    @media screen and (min-width: 1024px) {
+        display: none;
+    }
 `
