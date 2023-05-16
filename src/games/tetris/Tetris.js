@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+import { createStage } from './helpers/gameHelpers';
 
 // CUSTOM HOOKS
 import { useStage } from './hooks/useStage';
-
+import { usePlayer } from './hooks/usePlayer';
+import { useGameStatus } from './hooks/useGameStatus';
 
 // STYLED COMPONENTS
 import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';
@@ -15,23 +17,50 @@ import Stage from './components/Stage';
 import StartButton from './components/StartButton';
 import InputsWrapper from './components/InputsWrapper';
 
+
+
+
+
 const Tetris = () => {
+    const [gameOver, setGameOver] = useState(false);
 
 
-    const [stage, setStage] = useStage();
+    const [player, resetPlayer] = usePlayer();
+    const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
+    const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(rowsCleared);
 
 
+    const startGame = () => {
+        setStage(createStage())
+        setGameOver(false);
+        setScore(0);
+        setLevel(0);
+        setRows(0);
+    };
     return (
         <StyledTetrisWrapper>
+
             <StyledTetris>
                 <Stage stage={stage} />
                 <aside>
-                    <Display text={`Score: `} value={1000}/>
-                    <Display text={`Rows: `} value={8}/>
-                    <Display text={`Level: `} value={4} />
-                    <StartButton />
+                    {
+                        gameOver ?
+                        (<Display gameOver={gameOver} />)
+                        :
+                        (
+                            <>
+                                <Display text={`Score: `} value={score}/>
+                                <Display text={`Rows: `} value={rows}/>
+                                <Display text={`Level: `} value={level} />
+                            </>
+                        )
+                    }
+                    
+
+                    <StartButton callback={startGame} />
                 </aside>
             </StyledTetris>
+
             <InputsWrapper />
         </StyledTetrisWrapper>
     )
