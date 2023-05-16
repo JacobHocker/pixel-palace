@@ -47,20 +47,27 @@
 }
 
 /* ==== SIBEBAR BTN ==== */
-.sidebarBtnContainer{
+.sidebarBtnOpenContainer{
     position: fixed;
     z-index: 20;
-    left: 20px;
-    top: 15px;
+    left: -15px;
+    top: 50px;
+}
+.sidebarBtnCloseContainer{
+    position: fixed;
+    z-index: 20;
+    left: 10px;
+    top: 25px;
 }
 .sidebarOpen{
     border: 1px solid rgb(163, 5, 255);
-    font-size: 1rem;
-    padding: 1rem 0.25rem;
+    font-size: 0.95rem;
+    padding: 0.15rem 0.75rem;
     color: white;
+    rotate: 90deg;
     background: rgba(183, 0, 255, 0.247);
-    border-top-right-radius: 25%;
-    border-bottom-right-radius: 25%;
+    border-top-right-radius: 10%;
+    border-top-left-radius: 10%;
     transition: 0.15s ease-in;
 }
 .sidebarOpen:hover{
@@ -97,10 +104,10 @@
 /* ==== MEDIUM DEVICES ==== */
 @media screen and (min-width: 768px) and (max-width: 1024px){
     .sidebarOpen{
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     .sidebarClose{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     .navLink{
         font-size: 2.25rem;
@@ -114,10 +121,10 @@
 /* ==== LARGE DEVICES ==== */
 @media screen and (min-width: 1024px) {
     .sidebarOpen{
-        font-size: 1.5rem;
+        font-size: 1.15rem;
     }
     .sidebarClose{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     .navLink{
         font-size: 2.5rem;

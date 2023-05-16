@@ -26,9 +26,9 @@ const Tetris = () => {
             <StyledTetris>
                 <Stage stage={stage} />
                 <aside>
-                    <Display text={`Score: 1000`} />
-                    <Display text={`Rows: 2`} />
-                    <Display text={`Level: 4`} />
+                    <Display text={`Score: `} value={1000}/>
+                    <Display text={`Rows: `} value={8}/>
+                    <Display text={`Level: `} value={4} />
                     <StartButton />
                 </aside>
             </StyledTetris>

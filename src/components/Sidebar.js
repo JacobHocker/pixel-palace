@@ -164,11 +164,20 @@ const Sidebar = () => {
                     </motion.div>
                 }
             </AnimatePresence>
-            <div className='sidebarBtnContainer'>
-                <button onClick={cycleOpen} className={open ? 'sidebarClose' : 'sidebarOpen'}>
-                    {open ? "X" : ">>"}
+            {
+                open ?
+            <div className='sidebarBtnCloseContainer'>
+                <button onClick={cycleOpen} className='sidebarClose'>
+                    X
                 </button>
             </div>
+            :
+            <div className='sidebarBtnOpenContainer'>
+                <button onClick={cycleOpen} className='sidebarOpen'>
+                    Menu
+                </button>
+            </div>
+            }
         </main>
     )
 }

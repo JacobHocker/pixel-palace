@@ -34,7 +34,8 @@ export const StyledTetris = styled.div`
         width: 100%;
         max-width: 200px;
         display: flex;
-        flex-direction: column;
+        gap: 0.35rem;
+        flex-direction: row;
         justify-content: center;
         
         align-items: center;
