@@ -16,13 +16,17 @@ export const StyledStage = styled.div`
 
 
     @media screen and (min-width: 500px) and (max-width: 768px){
-        max-width: 50vw;
-    }
-    @media screen and (min-width: 768px) and (max-width: 1024px){
-        max-width: 25vw;
+        max-width: 35vw;
         grid-template-rows: repeat(
             ${props => props.height},
-            calc(25vw/${props => props.width})
+            calc(35vw/${props => props.width})
+        );
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+        max-width: 30vw;
+        grid-template-rows: repeat(
+            ${props => props.height},
+            calc(30vw/${props => props.width})
         );
     }
     @media screen and (min-width: 1024px) {

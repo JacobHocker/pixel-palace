@@ -5,6 +5,7 @@ export const StyledDisplay = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     border: 4px solid #333;
     min-height: 30px;
     width: 100%;
@@ -18,13 +19,13 @@ export const StyledDisplay = styled.div`
 
 
     @media screen and (min-width: 500px) and (max-width: 768px){
-        
+        font-size: 1rem;
     }
     @media screen and (min-width: 768px) and (max-width: 1024px){
-        
+        font-size: 1rem;
     }
     @media screen and (min-width: 1024px) {
-    
+        font-size: 1.25rem;
     }
     
 `;

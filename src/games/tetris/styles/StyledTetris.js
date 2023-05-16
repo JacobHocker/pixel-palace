@@ -20,7 +20,7 @@ export const StyledTetris = styled.div`
     max-width: 1200px;
 
     @media screen and (min-width: 500px) and (max-width: 768px){
-        
+        flex-direction: row;
         
     }
     @media screen and (min-width: 768px) and (max-width: 1024px){
@@ -34,10 +34,21 @@ export const StyledTetris = styled.div`
         width: 100%;
         max-width: 200px;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
+        
         align-items: center;
         padding: 0 20px;
+        @media screen and (min-width: 500px) and (max-width: 768px){
+            flex-direction: column;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1024px){
+            flex-direction: column;
+        }
+        @media screen and (min-width: 1024px) {
+            flex-direction: column;
+        }
+    
     }
 
 `
