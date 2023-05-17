@@ -15,10 +15,11 @@ export const StyledStartButton = styled.div`
     margin: 0 0 10px 0;
     padding: 10px;
     cursor: pointer;
-    transition: 0.25s ease-in;
+    transition: 0.15s ease-in;
 
     :hover{
-        border: 4px solid green;
+        border: 4px solid gold;
+        cursor: pointer;
     }
     @media screen and (min-width: 500px) and (max-width: 768px){
         font-size: 1rem;
