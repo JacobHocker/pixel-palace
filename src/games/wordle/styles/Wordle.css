@@ -1,0 +1,9 @@
+.wordle{
+    text-align: center;
+    background-color: #121212;
+    width: 100vw;
+    height: 100vh;
+    color: #FFF;
+    margin: 0;
+    padding-bottom: 10rem;
+}

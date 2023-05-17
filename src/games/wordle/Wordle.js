@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import './styles/Wordle.css';
 
 const Wordle = () => {
     return (
-        <div>Wordle</div>
+        <div className='wordle'>Wordle</div>
     )
 }
 
