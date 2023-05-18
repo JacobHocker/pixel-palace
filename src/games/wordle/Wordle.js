@@ -2,6 +2,7 @@ import React, { useState, useEffect, createContext } from 'react';
 import { boardDefault } from './components/Words';
 import './styles/Wordle.css';
 import Board from './components/Board';
+import Keyboard from './components/Keyboard';
 
 
 export const WordleContext = createContext();
@@ -23,6 +24,7 @@ const Wordle = () => {
             }}>
                 <div className='wordleGame'>
                     <Board />
+                    <Keyboard />
                 </div>
             </WordleContext.Provider>
         </div>

@@ -29,32 +29,11 @@
     align-items: center;
     padding-top: 10px;
 }
-.wordleBoard {
-    width: 100vw;
-    height: 550px;
-    border: 1px solid black;
-    flex-direction: column;
-}
-.wordleRow {
-    flex: 33%;
-    height: 70px;
-    display: flex;
-    flex-direction: row;
-    margin: 5px;
-}
-.wordleLetter{
-    flex: 33%;
-    height: 100%;
-    border: 1px solid grey;
-    margin: 5px;
-    display: grid;
-    place-items: center;
-    font-size: 30px;
-    font-weight: bolder;
-    color: white;
-    font-family: Instrument, serif;
-    box-shadow: 2px 0.5px rgba(255,255,255, 0.5);
-}
+
+
+
+
+
 /* ==== SMALL DEVICES ==== */
 @media screen and (min-width: 500px) and (max-width: 768px){
     .wordleNav h1{
