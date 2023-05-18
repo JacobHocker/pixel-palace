@@ -10,6 +10,7 @@
     flex-direction: row;
     justify-content: center;
     margin: 5px;
+    gap: 1%;
 }
 .wordleLineTwo{
     flex: 33%;
@@ -17,6 +18,7 @@
     flex-direction: row;
     justify-content: center;
     margin: 5px;
+    gap: 1%;
 }
 .wordleLineThree{
     flex: 33%;
@@ -24,6 +26,7 @@
     flex-direction: row;
     justify-content: center;
     margin: 5px;
+    gap: 1%;
 }
 .wordleLineFour{
     flex: 33%;
@@ -31,18 +34,18 @@
     flex-direction: row;
     justify-content: center;
     margin: 5px;
+    gap: 1%;
 }
 .wordleKey {
     width: 2rem;
     height: 2rem;
-    margin: 5px;
     border-radius: 4px;
     display: grid;
     place-items: center;
-    font-size: 1rem;
+    font-size: 1.25rem;
+    font-family: Instrument;
     background-color: grey;
     color: white;
-    padding: 0.25rem;
     cursor: pointer;
 }
 #wordleBig {
@@ -51,14 +54,74 @@
 
 /* ==== SMALL DEVICES ==== */
 @media screen and (min-width: 500px) and (max-width: 768px){
-    
+    .wordleLineOne{
+        gap: 1.5%;
+    }
+    .wordleLineTwo{
+        gap: 1.5%;
+    }
+    .wordleLineThree{
+        gap: 1.5%;
+    }
+    .wordleLineFour{
+        gap: 1.5%;
+    }
+    .wordleKey{
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.25rem;
+    }
     
 }
 /* ==== MEDIUM DEVICES ==== */
 @media screen and (min-width: 768px) and (max-width: 1024px){
-    
+    .wordleLineOne{
+        gap: 1.5%;
+    }
+    .wordleLineTwo{
+        gap: 1.5%;
+        margin-top: 7.5px;
+    }
+    .wordleLineThree{
+        gap: 1.5%;
+        margin-top: 7.5px;
+    }
+    .wordleLineFour{
+        gap: 2%;
+        margin-top: 7.5px;
+    }
+    .wordleKey{
+        width: 2.75rem;
+        height: 2.75rem;
+        font-size: 1.75rem;
+    }
+    #wordleBig {
+        width: 150px;
+    }
 }
 /* ==== LARGE DEVICES ==== */
 @media screen and (min-width: 1024px) {
-    
+    .wordleLineOne{
+        gap: 1.5%;
+    }
+    .wordleLineTwo{
+        gap: 1.5%;
+        margin-top: 7.5px;
+    }
+    .wordleLineThree{
+        gap: 1.5%;
+        margin-top: 7.5px;
+    }
+    .wordleLineFour{
+        gap: 2%;
+        margin-top: 7.5px;
+    }
+    .wordleKey{
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.75rem;
+    }
+    #wordleBig {
+        width: 150px;
+    }
 }

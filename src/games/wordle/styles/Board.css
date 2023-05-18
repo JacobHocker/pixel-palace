@@ -2,6 +2,7 @@
     width: 100vw;
     border: 1px solid black;
     flex-direction: column;
+    
 }
 .wordleRow {
     flex: 33%;
@@ -19,29 +20,43 @@
     display: grid;
     
     place-items: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bolder;
     color: white;
-    font-family: Instrument, serif;
+    font-family: Instrument;
     box-shadow: 2px 0.5px rgba(255,255,255, 0.5);
 }
 
 /* ==== SMALL DEVICES ==== */
 @media screen and (min-width: 500px) and (max-width: 768px){
-    .wordleNav h1{
-        font-size: 2.25rem;
+    .wordleRow{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
-    
+    .wordleLetter{
+        font-size: 1.75rem;
+    }
 }
 /* ==== MEDIUM DEVICES ==== */
 @media screen and (min-width: 768px) and (max-width: 1024px){
-    .wordleNav h1{
-        font-size: 2.25rem;
+    .wordleRow{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .wordleLetter{
+        font-size: 2rem;
     }
 }
 /* ==== LARGE DEVICES ==== */
 @media screen and (min-width: 1024px) {
-    .wordleNav h1{
-        font-size: 2.5rem;
+    .wordleRow{
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .wordleLetter{
+        font-size: 2.25rem;
     }
 }
