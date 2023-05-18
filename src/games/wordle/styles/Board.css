@@ -24,9 +24,31 @@
     font-weight: bolder;
     color: white;
     font-family: Instrument;
-    box-shadow: 2px 0.5px rgba(255,255,255, 0.5);
+    box-shadow: 3px 0px rgba(255,255,255, 0.5);
 }
-
+.wordleActiveLetter{
+    flex: 33%;
+    height: 100%;
+    border: 1px solid white;
+    margin: 5px;
+    display: grid;
+    
+    place-items: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: white;
+    font-family: Instrument;
+    box-shadow: 3px 0 white;
+}
+#wordleCorrect{
+    background-color: #528d4e;
+}
+#wordleAlmost{
+    background-color: #b49f39;
+}
+#wordleError{
+    background-color: #3a393c;
+}
 /* ==== SMALL DEVICES ==== */
 @media screen and (min-width: 500px) and (max-width: 768px){
     .wordleRow{

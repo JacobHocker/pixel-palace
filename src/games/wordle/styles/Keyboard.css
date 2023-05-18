@@ -51,7 +51,9 @@
 #wordleBig {
     width: 100px;
 }
-
+#wordleDisabled {
+    background-color: #3a393c;
+}
 /* ==== SMALL DEVICES ==== */
 @media screen and (min-width: 500px) and (max-width: 768px){
     .wordleLineOne{
