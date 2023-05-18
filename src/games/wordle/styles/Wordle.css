@@ -7,3 +7,70 @@
     margin: 0;
     padding-bottom: 10rem;
 }
+
+.wordleNav{
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wordleNav h1{
+    margin: 0;
+    font-family: Monoton, cursive;
+    color: white;
+    font-size: 2rem;
+}
+.wordleGame {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+.wordleBoard {
+    width: 100vw;
+    height: 550px;
+    border: 1px solid black;
+    flex-direction: column;
+}
+.wordleRow {
+    flex: 33%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+.wordleLetter{
+    flex: 33%;
+    height: 100%;
+    border: 1px solid grey;
+    margin: 5px;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+    font-weight: bolder;
+    color: white;
+    font-family: Instrument, serif;
+    box-shadow: 2px 0.5px rgba(255,255,255, 0.5);
+}
+/* ==== SMALL DEVICES ==== */
+@media screen and (min-width: 500px) and (max-width: 768px){
+    .wordleNav h1{
+        font-size: 2.25rem;
+    }
+    
+}
+/* ==== MEDIUM DEVICES ==== */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .wordleNav h1{
+        font-size: 2.25rem;
+    }
+}
+/* ==== LARGE DEVICES ==== */
+@media screen and (min-width: 1024px) {
+    .wordleNav h1{
+        font-size: 2.5rem;
+    }
+}

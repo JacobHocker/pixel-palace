@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react';
+import { WordleContext } from '../Wordle';
 
-const Letter = () => {
+const Letter = ({ letterPos, attemptVal }) => {
+    const { board, currAttempt } = useContext(WordleContext);
+    const letter = board[attemptVal][letterPos];
+
+
     return (
-        <div>Letter</div>
+        <div className='wordleLetter'>
+            {letter}
+        </div>
     )
 }
 
