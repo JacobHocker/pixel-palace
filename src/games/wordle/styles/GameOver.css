@@ -1,0 +1,24 @@
+.wordlePlayAgain{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.wordlePlayAgainBtn {
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: rgb(150, 150, 150);
+    border: 3px solid white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 3px 0px rgb(230, 228, 228);
+}
+.wordlePlayAgainBtn:hover{
+    cursor: pointer;
+}
+
+

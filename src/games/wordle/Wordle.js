@@ -13,6 +13,7 @@ const Wordle = () => {
     const [wordSet, setWordSet] = useState(new Set());
     const [correctWord, setCorrectWord] = useState("");
     const [disabledLetters, setDisabledLetters] = useState([]);
+    
     const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letterPos: 0});
     const [gameOver, setGameOver] = useState({
         gameOver: false,
@@ -27,6 +28,9 @@ const Wordle = () => {
         })
     }, [])
 
+    const playAgain = () => {
+        window.location.reload()
+    }
 
     const onSelectLetter = (keyVal) => {
         if (currAttempt.letterPos > 4) return;
@@ -90,7 +94,7 @@ const Wordle = () => {
             }}>
                 <div className='wordleGame'>
                     <Board />
-                    { gameOver.gameOver ? <GameOver /> : <Keyboard />}
+                    { gameOver.gameOver ? <GameOver playAgain={playAgain} /> : <Keyboard />}
                 </div>
             </WordleContext.Provider>
         </div>
