@@ -10,7 +10,7 @@ import Klotski from './games/klotski/Klotski';
 
 
 const App = () => {
-  const [bg, setBg] = useState("cyber");
+  const [bg, setBg] = useState("retro");
 
   
   useEffect(() => {
