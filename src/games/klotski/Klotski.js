@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import './styles/Klotski.css';
+import Board from './components/Board';
 
 const Klotski = () => {
     return (
-        <div>Klotski</div>
+        <div className='klotski'>
+            <Board />
+        </div>
     )
 }
 
