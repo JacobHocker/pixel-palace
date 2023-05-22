@@ -9,6 +9,7 @@
     position: relative;
     padding: 0;
     margin: 0 auto;
+    border: 1px solid white;
 }
 .klotskiTile{
     position: absolute;
@@ -16,7 +17,9 @@
     background: #ec6f66;
     display: grid;
     place-items: center;
+    border: 1px solid white;
     font-size: 20px;
+    box-shadow: inset 4px 4px rgba(255, 255, 255, 0.377);
 }
 .klotskiHole{
     opacity: 0;
