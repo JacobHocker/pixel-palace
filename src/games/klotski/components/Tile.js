@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import '../styles/Tile.css';
 import { TILE_COUNT, GRID_SIZE } from '../helpers/constants';
 import { getMatrixPosition, getVisualPosition } from '../helpers/helpers';
 import { motion,  useSpring } from 'framer-motion';

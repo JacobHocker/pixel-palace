@@ -1,8 +1,10 @@
 import React, { useState, useContext } from 'react';
+import '../styles/Board.css';
 import Tile from './Tile';
 import { TILE_COUNT, GRID_SIZE } from '../helpers/constants';
 import { canSwap, shuffle, swap, isSolved } from '../helpers/helpers';
 import { KlotskiContext } from '../Klotski';
+import StartGame from './StartGame';
 
 const Board = () => {
     const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
@@ -63,11 +65,13 @@ const Board = () => {
                     />
                 ))}
             </ul>
-            {hasWon && isStarted && <div>Puzzled Solved</div>}
-            {!isStarted ? (<button onClick={() => handleStartClick()}>Start Game</button>) 
-            :
-            (<button onClick={() => handleShuffleClick()}>Restart Game</button>)
-            }
+            
+            <StartGame 
+            isStarted={isStarted} 
+            hasWon={hasWon} 
+            handleShuffleClick={handleShuffleClick}
+            handleStartClick={handleStartClick}
+            />
         </>
     )
 }
