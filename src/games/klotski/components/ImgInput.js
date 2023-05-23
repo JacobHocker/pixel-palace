@@ -21,11 +21,13 @@ const ImgInput = () => {
 
     return (
         <div className='klotskiImgInput'>
+            <label>Copy & Paste Sqaure Image Link </label>
             <input 
             value={img} 
             onChange={handleImgChange} 
             className='klotskiInput'
             />
+            
         </div>
     )
 }

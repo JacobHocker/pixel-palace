@@ -23,9 +23,9 @@ const Klotski = () => {
             boardSize,
             }}>
             <div className='klotski'>
-                <>
+                <div className='klotskiHeader'>
                     <h1 className='klotskiTitle'>KLOTSKI</h1>
-                </>
+                </div>
                 <Board />
                 <ImgInput />
             </div>
