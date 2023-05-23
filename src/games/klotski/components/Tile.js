@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
-import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from '../helpers/constants';
+import { TILE_COUNT, GRID_SIZE } from '../helpers/constants';
 import { getMatrixPosition, getVisualPosition } from '../helpers/helpers';
 import { motion,  useSpring } from 'framer-motion';
 
 
 const Tile = (props) => {
-    const { tile, index, width, height, handleTileClick, img } = props;
+    const { tile, index, width, height, handleTileClick, img, boardSize } = props;
     const { row, col } = getMatrixPosition(index);
     const visualPos = getVisualPosition(row, col, width, height);
 
@@ -24,7 +24,7 @@ const Tile = (props) => {
         translateX: x,
         translateY: y,
         backgroundImage: `url(${img})`,
-        backgroundSize: `${BOARD_SIZE }px`,
+        backgroundSize: `${boardSize }px`,
         backgroundPosition: `${(100 / (GRID_SIZE - 1)) * (tile % GRID_SIZE)}% ${(100 / (GRID_SIZE - 1)) * (Math.floor(tile / GRID_SIZE))}%`,
     };
     
