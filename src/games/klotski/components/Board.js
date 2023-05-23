@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Tile from './Tile';
 import { TILE_COUNT, BOARD_SIZE, GRID_SIZE } from '../helpers/constants';
 import { canSwap, shuffle, swap, isSolved } from '../helpers/helpers';
-
+import { KlotskiContext } from '../Klotski';
 
 const Board = () => {
     const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
     const [ isStarted, setIsStarted] = useState(false);
+
+    const { img, setImg } = useContext(KlotskiContext);
 
     console.log('is started', isStarted)
 
@@ -56,6 +58,7 @@ const Board = () => {
                         width={pieceWidth}
                         height={pieceHeight}
                         handleTileClick={handleTileClick}
+                        img={img}
                     />
                 ))}
             </ul>

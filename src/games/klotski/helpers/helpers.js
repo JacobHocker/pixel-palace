@@ -61,4 +61,24 @@ export function canSwap(srcIndex, destIndex) {
     const { row: srcRow, col: srcCol } = getMatrixPosition(srcIndex);
     const { row: destRow, col: destCol } = getMatrixPosition(destIndex);
     return Math.abs(srcRow - destRow) + Math.abs(srcCol - destCol) === 1;
+};
+
+export function updateUrlParams(url, param, paramVal) {
+    var newAdditionalUrl = "";
+    var tempArray = url.split("?");
+    var baseUrl = tempArray[0];
+    var additionalUrl = tempArray[1];
+    var temp = "";
+    if (additionalUrl) {
+        tempArray = additionalUrl.split("&");
+        for (var i = 0; i < tempArray.length; i++) {
+            if(tempArray[i].split("=")[0] !== param) {
+                newAdditionalUrl += temp + tempArray[i];
+                temp = "&";
+            }
+        }
+    }
+
+    var rows_txt = temp + "" + param + "=" + paramVal;
+    return baseUrl + "?" + newAdditionalUrl + rows_txt;
 }
