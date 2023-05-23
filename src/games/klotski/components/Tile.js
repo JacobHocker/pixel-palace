@@ -24,7 +24,7 @@ const Tile = (props) => {
         translateX: x,
         translateY: y,
         backgroundImage: `url(${img})`,
-        backgroundSize: `${BOARD_SIZE * 1.25}px`,
+        backgroundSize: `${BOARD_SIZE }px`,
         backgroundPosition: `${(100 / (GRID_SIZE - 1)) * (tile % GRID_SIZE)}% ${(100 / (GRID_SIZE - 1)) * (Math.floor(tile / GRID_SIZE))}%`,
     };
     

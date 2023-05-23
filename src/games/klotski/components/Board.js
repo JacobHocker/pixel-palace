@@ -8,7 +8,7 @@ const Board = () => {
     const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
     const [ isStarted, setIsStarted] = useState(false);
 
-    const { img, setImg } = useContext(KlotskiContext);
+    const { img } = useContext(KlotskiContext);
 
     console.log('is started', isStarted)
 

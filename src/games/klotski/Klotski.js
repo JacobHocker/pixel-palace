@@ -3,11 +3,12 @@ import './styles/Klotski.css';
 import Board from './components/Board';
 import ImgInput from './components/ImgInput';
 
+
 export const KlotskiContext = createContext();
 
 
 const Klotski = () => {
-    const [img, setImg] = useState(" ");
+    const [img, setImg] = useState("");
 
     return (
         <KlotskiContext.Provider value={{
