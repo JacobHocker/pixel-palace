@@ -3,12 +3,12 @@
     background-color: rgb(37, 70, 27);
     height: 100vh;
     overflow-x: hidden;
-    /* display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center; */
-    display: grid;
-    place-items: center;
+    align-items: center;
+    /* display: grid;
+    place-items: center; */
 }
 .klotskiHeader{
     margin-bottom: 1rem;
