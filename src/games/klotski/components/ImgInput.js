@@ -2,9 +2,10 @@ import React, {  useContext, useEffect } from 'react';
 import { KlotskiContext } from '../Klotski';
 import { updateUrlParams } from '../helpers/helpers';
 import '../styles/ImgInput.css';
+import { randomImg } from '../helpers/imgs';
 
 const ImgInput = () => {
-    const { img, setImg } = useContext(KlotskiContext);
+    const { img, setImg, shuffleTiles, setIsStarted } = useContext(KlotskiContext);
 
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search)
@@ -18,9 +19,17 @@ const ImgInput = () => {
         window.history.replaceState("", "", updateUrlParams(window.location.href, "img", img))
     };
     
+    const handleRandomImageClick = () => {
+        setImg(randomImg())
+        shuffleTiles()
+        setIsStarted(true)
+    };
 
     return (
         <div className='klotskiImgInput'>
+            <button onClick={handleRandomImageClick}>
+                Random Image
+            </button>
             <label>Copy & Paste Sqaure Image Link </label>
             <input 
             value={img} 

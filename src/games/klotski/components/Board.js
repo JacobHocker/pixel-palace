@@ -1,23 +1,18 @@
 import React, { useState, useContext } from 'react';
 import '../styles/Board.css';
 import Tile from './Tile';
-import { TILE_COUNT, GRID_SIZE } from '../helpers/constants';
+import {  GRID_SIZE } from '../helpers/constants';
 import { canSwap, shuffle, swap, isSolved } from '../helpers/helpers';
 import { KlotskiContext } from '../Klotski';
 import StartGame from './StartGame';
+import Score from './Score';
 
 const Board = () => {
-    const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
-    
-
-    const { img, isStarted, setIsStarted, boardSize } = useContext(KlotskiContext);
+    const { img, isStarted, setIsStarted, boardSize, tiles, setTiles, shuffleTiles, setMoves, moves } = useContext(KlotskiContext);
 
     console.log('is started', isStarted)
 
-    const shuffleTiles = () => {
-        const shuffledTiles = shuffle(tiles)
-        setTiles(shuffledTiles)
-    };
+    
 
     const swapTiles = (tileIndex) => {
         if (canSwap(tileIndex, tiles.indexOf(tiles.length - 1))) {
@@ -28,6 +23,9 @@ const Board = () => {
 
     const handleTileClick = (index) => {
         swapTiles(index);
+        if( isStarted) {
+            setMoves(moves + 1)
+        }
     };
 
     const handleShuffleClick = () => {
@@ -72,6 +70,7 @@ const Board = () => {
             handleShuffleClick={handleShuffleClick}
             handleStartClick={handleStartClick}
             />
+            <Score />
         </>
     )
 }

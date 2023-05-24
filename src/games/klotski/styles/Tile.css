@@ -1,10 +1,13 @@
 .klotskiTile{
     position: absolute;
     list-style: none;
-    background-color: #851400e5;
+    background-color: #851400ef;
     display: grid;
     place-items: center;
     font-size: 1.5rem;
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.54);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.54);
+    box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.54);
     
     
 }
