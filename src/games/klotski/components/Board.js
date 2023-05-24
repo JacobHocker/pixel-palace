@@ -10,7 +10,7 @@ import Score from './Score';
 const Board = () => {
     const { img, isStarted, setIsStarted, boardSize, tiles, setTiles, shuffleTiles, setMoves, moves } = useContext(KlotskiContext);
 
-    console.log('is started', isStarted)
+    
 
     
 
@@ -30,10 +30,12 @@ const Board = () => {
 
     const handleShuffleClick = () => {
         shuffleTiles();
+        setMoves(0);
     };
 
     const handleStartClick = () => {
         shuffleTiles();
+        setMoves(0);
         setIsStarted(true)
     }
 
@@ -63,14 +65,14 @@ const Board = () => {
                     />
                 ))}
             </ul>
-            
+            <Score />
             <StartGame 
             isStarted={isStarted} 
             hasWon={hasWon} 
             handleShuffleClick={handleShuffleClick}
             handleStartClick={handleStartClick}
             />
-            <Score />
+            
         </>
     )
 }

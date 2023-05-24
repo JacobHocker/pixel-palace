@@ -5,7 +5,7 @@ import '../styles/ImgInput.css';
 import { randomImg } from '../helpers/imgs';
 
 const ImgInput = () => {
-    const { img, setImg, shuffleTiles, setIsStarted } = useContext(KlotskiContext);
+    const { img, setImg, shuffleTiles, setIsStarted, setMoves } = useContext(KlotskiContext);
 
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search)
@@ -20,9 +20,10 @@ const ImgInput = () => {
     };
     
     const handleRandomImageClick = () => {
-        setImg(randomImg())
-        shuffleTiles()
-        setIsStarted(true)
+        setImg(randomImg());
+        shuffleTiles();
+        setMoves(0);
+        setIsStarted(true);
     };
 
     return (

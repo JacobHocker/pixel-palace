@@ -1,3 +1,65 @@
 .klotskiScores{
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.klotskiScoreDisplay {
+    color: #ffffff;
+    font-size: 1.25rem;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 28px rgb(0, 81, 255),
+    0 0 30px rgb(0, 81, 255),
+    0 0 32px rgb(0, 81, 255),
+    0 0 34px rgb(0, 81, 255),
+    0 0 36px rgb(0, 81, 255);
+}
+.klotskiGameCompleted {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.klotskiGameCompleted h1{
+    color: #ffffff;
+    font-size: 1.25rem;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 28px rgb(0, 81, 255),
+    0 0 30px rgb(0, 81, 255),
+    0 0 32px rgb(0, 81, 255),
+    0 0 34px rgb(0, 81, 255),
+    0 0 36px rgb(0, 81, 255);
+}
+
+/* ==== SMALL DEVICES ==== */
+@media screen and (min-width: 500px) and (max-width: 768px){
+    .klotskiGameCompleted h1{
+        font-size: 1.5rem;
+    }
+    .klotskiScoreDisplay {
+        font-size: 1.5rem;
+    }
+}
+/* ==== MEDIUM DEVICES ==== */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .klotskiGameCompleted h1{
+        font-size: 1.5rem;
+    }
+    .klotskiScoreDisplay {
+        font-size: 1.5rem;
+    }
+}
+/* ==== LARGE DEVICES ==== */
+@media screen and (min-width: 1024px) {
+    .klotskiGameCompleted h1{
+        font-size: 1.5rem;
+    }
+    .klotskiScoreDisplay {
+        font-size: 1.5rem;
+    }
 }

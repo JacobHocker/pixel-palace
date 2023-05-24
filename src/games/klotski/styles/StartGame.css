@@ -1,8 +1,48 @@
 .klotskiStartContainer{
-    margin-top: 2rem;
     width: 100%;
+    
 }
 
-.klotskiBtn{
-    display: block;
+.klotskiStartBtn {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    background: transparent;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid white;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 18px rgb(0, 255, 21),
+    0 0 28px rgb(0, 255, 21),
+    0 0 35px rgb(0, 255, 21); 
+}
+.klotskiRestartBtn {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    background: transparent;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid white;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 18px rgb(0, 255, 21),
+    0 0 28px rgb(0, 255, 21),
+    0 0 35px rgb(0, 255, 21); 
+}
+
+/* ==== SMALL DEVICES ==== */
+@media screen and (min-width: 500px) and (max-width: 768px){
+    
+}
+/* ==== MEDIUM DEVICES ==== */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    
+}
+/* ==== LARGE DEVICES ==== */
+@media screen and (min-width: 1024px) {
+    
 }
