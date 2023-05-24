@@ -33,6 +33,9 @@
     0 0 28px rgb(0, 255, 21),
     0 0 35px rgb(0, 255, 21); 
 }
+.klotskiRestartBtn:hover, .klotskiStartBtn:hover{
+    cursor: pointer;
+}
 
 /* ==== SMALL DEVICES ==== */
 @media screen and (min-width: 500px) and (max-width: 768px){

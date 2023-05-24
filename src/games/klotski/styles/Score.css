@@ -2,10 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -1rem;
 }
 .klotskiScoreDisplay {
     color: #ffffff;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     text-shadow:
     0 0 7px #fff,
     0 0 10px #fff,
@@ -24,7 +25,7 @@
 }
 .klotskiGameCompleted h1{
     color: #ffffff;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     text-shadow:
     0 0 7px #fff,
     0 0 10px #fff,
@@ -39,27 +40,27 @@
 /* ==== SMALL DEVICES ==== */
 @media screen and (min-width: 500px) and (max-width: 768px){
     .klotskiGameCompleted h1{
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
     .klotskiScoreDisplay {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
 }
 /* ==== MEDIUM DEVICES ==== */
 @media screen and (min-width: 768px) and (max-width: 1024px){
     .klotskiGameCompleted h1{
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
     .klotskiScoreDisplay {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
 }
 /* ==== LARGE DEVICES ==== */
 @media screen and (min-width: 1024px) {
     .klotskiGameCompleted h1{
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
     .klotskiScoreDisplay {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
 }
