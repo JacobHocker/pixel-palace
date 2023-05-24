@@ -22,22 +22,28 @@
     0 0 10px #fff,
     0 0 21px #fff,
     /* Color glow */
+    0 0 32px rgb(0, 255, 21),
     0 0 42px rgb(0, 255, 21),
+    0 0 52px rgb(0, 255, 21),
     0 0 62px rgb(0, 255, 21),
-    0 0 82px rgb(0, 255, 21),
-    0 0 92px rgb(0, 255, 21),
-    0 0 98px rgb(0, 255, 21);
+    0 0 78px rgb(0, 255, 21);
 }
 
 /* ==== SMALL DEVICES ==== */
 @media screen and (min-width: 500px) and (max-width: 768px){
-    
+    .klotskiTitle{
+        font-family: 2.75rem;
+    }
 }
 /* ==== MEDIUM DEVICES ==== */
 @media screen and (min-width: 768px) and (max-width: 1024px){
-    
+    .klotskiTitle{
+        font-family: 3rem;
+    }
 }
 /* ==== LARGE DEVICES ==== */
 @media screen and (min-width: 1024px) {
-    
+    .klotskiTitle{
+        font-family: 3rem;
+    }
 }
