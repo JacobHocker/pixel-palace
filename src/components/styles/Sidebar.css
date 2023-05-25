@@ -51,20 +51,22 @@
 .sidebarBtnOpenContainer{
     position: fixed;
     z-index: 20;
-    left: -15px;
-    top: 50px;
+    left: -20px;
+    top: 80px;
+    
 }
 .sidebarBtnCloseContainer{
     position: fixed;
     z-index: 20;
     left: 10px;
     top: 25px;
+    
 }
 .sidebarOpen{
     /* border: 1px solid rgb(163, 5, 255);
     background: rgba(183, 0, 255, 0.247); */
     border: 1px solid rgb(5, 247, 255);
-    background: rgba(0, 247, 255, 0.247);
+    background: rgba(0, 247, 255, 0.548);
     font-size: 0.95rem;
     padding: 0.15rem 0.75rem;
     color: white;

@@ -48,21 +48,30 @@ body {
 
 
 .cyberApp{
-  background-image: url('./assets/imgs/cyberBgAlt.jpeg');
+  background-image: url('./assets/imgs/cyberSvg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .retroApp{
-  background-image: url('./assets/imgs/darkBGlandscape.avif');
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/imgs/retroSvg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .modernApp{
-  background-image: url('./assets/imgs/neonBg.jpeg');
+  background-image: url('./assets/imgs/modernSvg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.classicApp{
+  background-image: url('./assets/imgs/classicSvg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

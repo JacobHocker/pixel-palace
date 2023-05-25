@@ -1,0 +1,28 @@
+/* ==== GAME INFO CARD ==== */
+.gameInfoCard{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+}
+
+.gameInfoThumbnail{
+    width: 2rem;
+}
+
+
+
+
+/* ==== SMALL DEVICES ==== */
+@media screen and (min-width: 500px) and (max-width: 768px){
+    
+}
+/* ==== MEDIUM DEVICES ==== */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    
+}
+/* ==== LARGE DEVICES ==== */
+@media screen and (min-width: 1024px) {
+    
+}

@@ -22,7 +22,7 @@ const App = () => {
   }, [bg]);
 
   return (
-    <div className={bg === "cyber" ? "cyberApp" : bg === "retro" ? "retroApp" : bg === "modern" ? "modernApp" : "null"}>
+    <div className={bg === "cyber" ? "cyberApp" : bg === "retro" ? "retroApp" : bg === "modern" ? "modernApp" : bg === "classic" ? "classicApp" : "null"}>
       <Sidebar bg={bg} />
       <Routes>
         <Route element={<Home bg={bg} setBg={setBg} />} path="/" />

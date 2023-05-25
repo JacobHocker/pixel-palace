@@ -9,14 +9,17 @@ import ThemeButton from '../components/ThemeButton';
 const Home = ({ setBg, bg }) => {
     
 
-    const setDarkTheme = () => {
+    const setRetroTheme = () => {
         setBg("retro");
     };
-    const setPurpleTheme = () => {
+    const setCyberTheme = () => {
         setBg("cyber");
     };
-    const setNeonTheme = () => {
+    const setModernTheme = () => {
         setBg("modern");
+    };
+    const setClassicTheme = () => {
+        setBg("classic");
     };
 
     return (
@@ -40,20 +43,25 @@ const Home = ({ setBg, bg }) => {
                 <div className='themeButtonContainer'>
                     <ThemeButton 
                     bg={bg} 
-                    callback={setPurpleTheme} 
+                    callback={setCyberTheme} 
                     text={"Cyber"}
                     value={"cyber"}
                     />
-                    
                     <ThemeButton 
                     bg={bg} 
-                    callback={setDarkTheme} 
+                    callback={setClassicTheme} 
+                    text={"Classic"}
+                    value={"classic"}
+                    />
+                    <ThemeButton 
+                    bg={bg} 
+                    callback={setRetroTheme} 
                     text={"Retro"} 
                     value={"retro"}
                     />
                     <ThemeButton 
                     bg={bg} 
-                    callback={setNeonTheme} 
+                    callback={setModernTheme} 
                     text={"Modern"} 
                     value={"modern"}
                     />
