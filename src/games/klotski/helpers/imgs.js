@@ -5,6 +5,10 @@ import DarthLuke from '../assets/imgs/lukedarthsquare.jpeg';
 import Smiley from '../assets/imgs/smileySquare.png';
 import Squirtle from '../assets/imgs/squirtle.png';
 import Starwars from '../assets/imgs/starwarssquare.jpg';
+import Avengers from '../assets/imgs/avengerssquare.webp';
+import Wakanda from '../assets/imgs/wakandasquare.webp';
+import OwTwo from '../assets/imgs/ow2square.jpeg';
+import Kiriko from '../assets/imgs/kirikosquare.jpeg';
 
 export const ImgBank = [
     {
@@ -34,6 +38,22 @@ export const ImgBank = [
     {
         id: 6,
         value: Starwars,
+    },
+    {
+        id: 7,
+        value: Avengers,
+    },
+    {
+        id: 8,
+        value: Wakanda,
+    },
+    {
+        id: 9,
+        value: OwTwo,
+    },
+    {
+        id: 10,
+        value: Kiriko,
     },
 ];
 

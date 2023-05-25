@@ -5,7 +5,6 @@
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    margin-top: 1rem;
 }
 .klotskiInputBtnContainer{
     display: flex;
@@ -52,7 +51,7 @@
     margin-top: 0.5rem;
 }
 .klotskiCustomInput label{
-    font-size: 1.25rem;
+    font-size: 1rem;
     padding: 0.5rem;
     color: white;
     text-shadow:
@@ -113,7 +112,7 @@
         font-size: 1.25rem;
     }
     .klotskiCustomInput label{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 }
 /* ==== MEDIUM DEVICES ==== */
@@ -127,7 +126,7 @@
         font-size: 1.5rem;
     }
     .klotskiCustomInput label{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 }
 /* ==== LARGE DEVICES ==== */
@@ -141,6 +140,6 @@
         font-size: 1.5rem;
     }
     .klotskiCustomInput label{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 }
