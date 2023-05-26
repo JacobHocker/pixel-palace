@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import './styles/Chess.css';
+import ChessBoard from './components/ChessBoard';
 
 const Chess = () => {
     return (
-        <div>Chess</div>
+        <main className='chess'>
+            <ChessBoard />
+        </main>
     )
 }
 
