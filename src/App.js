@@ -7,6 +7,7 @@ import Sidebar from './components/Sidebar';
 import About from './pages/about/About';
 import GamesPage from './pages/gamesPage/GamesPage';
 import Klotski from './games/klotski/Klotski';
+import Solitaire from './games/solitaire/Solitaire';
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
         <Route element={<Tetris />} path="/tetris" />
         <Route element={<Wordle />} path="/wordle" />
         <Route element={<Klotski />} path="/klotski" />
+        <Route element={<Solitaire />} path='/solitaire' />
       </Routes>
     </div>
   )

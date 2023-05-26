@@ -82,7 +82,7 @@
         font-size: 2.25rem;
     }
     .themeButtonContainer{
-        grid-template-columns:  1fr 1fr 1fr;
+        grid-template-columns:  1fr 1fr;
     }
     
 }
@@ -105,5 +105,8 @@
 @media screen and (min-width: 1024px) {
     .homeTitle h1{
         font-size: 4.rem;
+    }
+    .themeButtonContainer{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
