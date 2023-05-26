@@ -1,7 +1,7 @@
 import Tetris from '../imgs/tetris.jpeg';
 import Wordle from '../imgs/wordle.webp';
 import Klotski from '../imgs/sliderPuzzle.png';
-import Solitaire from '../imgs/solitaire.avif'
+import Chess from '../imgs/chess.png';
 
 export const GamesInfo = [
     {
@@ -33,9 +33,9 @@ export const GamesInfo = [
     },
     {
         id: 3,
-        title: 'Solitaire',
-        img: `${Solitaire}`,
-        link: '/solitaire',
+        title: 'Chess',
+        img: `${Chess}`,
+        link: '/chess',
         history: "",
         objective: "",
         wikiLink: "",

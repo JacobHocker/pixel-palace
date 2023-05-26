@@ -7,15 +7,21 @@ import Sidebar from './components/Sidebar';
 import About from './pages/about/About';
 import GamesPage from './pages/gamesPage/GamesPage';
 import Klotski from './games/klotski/Klotski';
-import Solitaire from './games/solitaire/Solitaire';
+
+import Chess from './games/chess/Chess';
 
 
 const App = () => {
-  const [bg, setBg] = useState("retro");
+  const [bg, setBg] = useState("classic");
 
   
   useEffect(() => {
-    setBg(window.localStorage.getItem('bg'))
+    if (window.localStorage.getItem('bg') === null) {
+      window.localStorage.setItem('bg', `${bg}`)
+    } else {
+      setBg(window.localStorage.getItem('bg'))
+    }
+    
   }, []);
 
   useEffect(() => {
@@ -32,7 +38,7 @@ const App = () => {
         <Route element={<Tetris />} path="/tetris" />
         <Route element={<Wordle />} path="/wordle" />
         <Route element={<Klotski />} path="/klotski" />
-        <Route element={<Solitaire />} path='/solitaire' />
+        <Route element={<Chess />} path="/chess" />
       </Routes>
     </div>
   )
