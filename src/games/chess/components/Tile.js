@@ -6,7 +6,7 @@ import '../styles/Tile.css';
 const Tile = ({ number, img}) => {
     if(number % 2 === 0) {
         return (
-            <div className='chessTile whiteTile'><img src={img}  className='chessPieceImg' /></div>
+            <div className='chessTile whiteTile'></div>
         )
     } else {
         return (
