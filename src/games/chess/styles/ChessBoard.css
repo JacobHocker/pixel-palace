@@ -7,11 +7,3 @@
     grid-template-columns: repeat(8, 50px);
     grid-template-rows: repeat(8, 50px);
 }
-.chessWhiteTile{
-    background-color: aqua;
-    color: black;
-}
-.chessBlackTile{
-    background-color: blueviolet;
-    color: black;
-}

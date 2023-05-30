@@ -1,0 +1,16 @@
+.chessTile{
+    display: grid;
+    place-items: center;
+}
+
+.whiteTile{
+    background-color: aqua;
+    color: black;
+}
+.blackTile{
+    background-color: blueviolet;
+    color: black;
+}
+.chessPieceImg{
+    width: 90%;
+}
