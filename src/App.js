@@ -8,7 +8,7 @@ import About from './pages/about/About';
 import GamesPage from './pages/gamesPage/GamesPage';
 import Klotski from './games/klotski/Klotski';
 
-import Chess from './games/chess/Chess';
+import Chess from './games/chess/Chess.tsx';
 
 
 const App = () => {
