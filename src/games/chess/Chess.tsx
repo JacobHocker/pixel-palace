@@ -2,9 +2,11 @@ import './styles/Chess.css';
 import ChessBoard from "./components/ChessBoard.tsx"
 
 function Chess() {
+    
+
     return(
         <div className="chess">
-            <ChessBoard />
+            <ChessBoard  />
         </div>
     )
 }
