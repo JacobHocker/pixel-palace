@@ -1,9 +1,45 @@
 .chessBoard{
-    width: 400px;
-    height: 400px;
-    background-color: white;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(132, 133, 133);
+    border: 5px solid rgb(150, 100, 67);
     color: black;
     display: grid;
-    grid-template-columns: repeat(8, 50px);
-    grid-template-rows: repeat(8, 50px);
+    grid-template-columns: repeat(8, 25px);
+    grid-template-rows: repeat(8, 25px);
+    box-shadow: 1px 1px 0px rgb(99, 67, 45),
+                2px 2px 0px rgb(99, 67, 45),
+                3px 3px 0px rgb(99, 67, 45),
+                4px 4px 0px rgb(99, 67, 45),
+                5px 5px 0px rgb(99, 67, 45),
+                6px 6px 0px rgb(99, 67, 45);
+}
+
+/* ==== SMALL DEVICES ==== */
+@media screen and (min-width: 500px) and (max-width: 768px){
+    .chessBoard{
+        width: 400px;
+        height: 400px;
+        grid-template-columns: repeat(8, 50px);
+        grid-template-rows: repeat(8, 50px);
+    }
+    
+}
+/* ==== MEDIUM DEVICES ==== */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .chessBoard{
+        width: 600px;
+        height: 600px;
+        grid-template-columns: repeat(8, 75px);
+        grid-template-rows: repeat(8, 75px);
+    }
+}
+/* ==== LARGE DEVICES ==== */
+@media screen and (min-width: 1024px) {
+    .chessBoard{
+        width: 800px;
+        height: 800px;
+        grid-template-columns: repeat(8, 100px);
+        grid-template-rows: repeat(8, 100px);
+    }
 }
