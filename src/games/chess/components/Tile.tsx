@@ -9,13 +9,23 @@ export default function Tile({ number, image}: Props) {
     if (number % 2 === 0) {
         return (
             <div className="chessTile blackTile">
-                <img src={image} className="chessPieceImg"  />
+                
+                {
+                    image && 
+                    <div style={{ backgroundImage: `url(${image})`}} className="chessPiece">
+                    </div>
+                }
             </div>
         );
     } else {
         return (
             <div className="chessTile whiteTile">
-                <img src={image} className="chessPieceImg" />
+                
+                {
+                    image && 
+                    <div style={{ backgroundImage: `url(${image})`}} className="chessPiece">
+                    </div>
+                }
             </div>
         );
     }

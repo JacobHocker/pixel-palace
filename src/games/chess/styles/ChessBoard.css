@@ -1,12 +1,12 @@
 .chessBoard{
-    width: 200px;
-    height: 200px;
-    background-color: rgb(132, 133, 133);
+    width: 280px;
+    height: 280px;
+    background-color: transparent;
     border: 5px solid rgb(150, 100, 67);
     color: black;
     display: grid;
-    grid-template-columns: repeat(8, 25px);
-    grid-template-rows: repeat(8, 25px);
+    grid-template-columns: repeat(8, 35px);
+    grid-template-rows: repeat(8, 35px);
     box-shadow: 1px 1px 0px rgb(99, 67, 45),
                 2px 2px 0px rgb(99, 67, 45),
                 3px 3px 0px rgb(99, 67, 45),
