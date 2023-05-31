@@ -1,4 +1,4 @@
-import { MouseEvent, useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import '../styles/ChessBoard.css';
 import Tile from './Tile.tsx';
 
@@ -81,7 +81,8 @@ export default function ChessBoard() {
         }
     }, [])
 
-    function grabPiece(e: React.MouseEvent) {
+    // Mouse Events
+    function grabPieceMouse(e: React.MouseEvent) {
         const element = e.target as HTMLElement;
         const chessBoard = chessBoardRef.current;
         if(element.classList.contains("chessPiece") && chessBoard){
@@ -97,7 +98,7 @@ export default function ChessBoard() {
             setActivePiece(element)
         }
     }
-    function movePiece(e: React.MouseEvent) {
+    function movePieceMouse(e: React.MouseEvent) {
         const chessBoard = chessBoardRef.current;
         if (activePiece && chessBoard) {
             const minX = chessBoard.offsetLeft - Math.abs(Math.ceil(pieceSize / 4));
@@ -130,7 +131,7 @@ export default function ChessBoard() {
             }
         }
     }
-    function dropPiece(e: React.MouseEvent) {
+    function dropPieceMouse(e: React.MouseEvent ) {
         const chessBoard = chessBoardRef.current;
         if(activePiece && chessBoard){
             const x = Math.floor((e.clientX - chessBoard.offsetLeft) / pieceSize);
@@ -149,7 +150,78 @@ export default function ChessBoard() {
             setActivePiece(null);
         }
     }
-    
+    // Touch Events
+    function grabPieceTouch(e: React.TouchEvent) {
+        const element = e.target as HTMLElement;
+        const chessBoard = chessBoardRef.current;
+        const touches = e.touches[0]
+        if(element.classList.contains("chessPiece") && chessBoard){
+            
+            setGridX(Math.floor((touches.pageX - chessBoard.offsetLeft) / pieceSize));
+            setGridY(Math.abs(Math.ceil((touches.pageY - chessBoard.offsetTop - boardSize) / pieceSize)));
+            const x = touches.pageX - Math.abs(Math.ceil(pieceSize / 2));
+            const y = touches.pageY - Math.abs(Math.ceil(pieceSize / 2));
+            element.style.position = "absolute";
+            element.style.left = `${x}px`;
+            element.style.top = `${y}px`;
+
+            setActivePiece(element)
+        }
+    }
+    function movePieceTouch(e: React.TouchEvent) {
+        const chessBoard = chessBoardRef.current;
+        const touches = e.touches[0]
+        if (activePiece && chessBoard) {
+            const minX = chessBoard.offsetLeft - Math.abs(Math.ceil(pieceSize / 4));
+            const minY = chessBoard.offsetTop - Math.abs(Math.ceil(pieceSize / 4));
+            const maxX = chessBoard.offsetLeft + chessBoard.clientWidth - Math.abs(Math.ceil(pieceSize / 4) * 3);
+            const maxY = chessBoard.offsetTop + chessBoard.clientHeight - Math.abs(Math.ceil(pieceSize / 4) * 3);
+            const x = touches.pageX - Math.abs(Math.ceil(pieceSize / 2));
+            const y = touches.pageY - Math.abs(Math.ceil(pieceSize / 2));
+            activePiece.style.position = "absolute";
+
+            // If X is smaller than minimum amount
+            if (x < minX) {
+                activePiece.style.left = `${minX}px`;
+            }
+            // If X is bigger than maximum amount
+            else if (x > maxX){
+                activePiece.style.left = `${maxX}px`;
+            } else {
+                activePiece.style.left = `${x}px`;
+            }
+            // If Y is smaller than minimum amount
+            if(y < minY) {
+                activePiece.style.top = `${minY}px`;
+            } 
+            // If Y is bigger than maximum amount
+            else if (y > maxY) {
+                activePiece.style.top = `${maxY}px`;
+            } else {
+                activePiece.style.top = `${y}px`;
+            }
+        }
+    }
+    function dropPieceTouch(e: React.TouchEvent ) {
+        const chessBoard = chessBoardRef.current;
+        const touches = e.touches[0]
+        if(activePiece && chessBoard){
+            const x = Math.floor((touches.pageX - chessBoard.offsetLeft) / pieceSize);
+            const y = Math.abs(Math.ceil((touches.pageY - chessBoard.offsetTop - boardSize) / pieceSize));
+
+            setPieces((value) => {
+                const pieces = value.map((p) => {
+                    if(p.x === gridX && p.y === gridY) {
+                        p.x = x;
+                        p.y = y
+                    }
+                    return p;
+                });
+                return pieces
+            });
+            setActivePiece(null);
+        }
+    }
     // Creating Board
     for (let j = verticalAxis.length - 1; j >= 0; j--) {
         for (let i = 0; i < horizontalAxis.length; i++) {
@@ -167,9 +239,13 @@ export default function ChessBoard() {
     }
     return(
         <div className="chessBoard"
-        onMouseMove={(e) => movePiece(e)}
-        onMouseDown={(e) => grabPiece(e)}
-        onMouseUp={(e) => dropPiece(e)}
+        onMouseMove={(e) => movePieceMouse(e)}
+        onMouseDown={(e) => grabPieceMouse(e)}
+        onMouseUp={(e) => dropPieceMouse(e)}
+
+        onTouchStart={(e) => grabPieceTouch(e)}
+        onTouchMove={(e) => movePieceTouch(e)}
+        onTouchEnd={(e) => dropPieceTouch(e)}
         ref={chessBoardRef}
         >
             {board}
