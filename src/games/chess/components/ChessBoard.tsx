@@ -41,6 +41,7 @@ for (let i = 0; i < 8; i++) {
 
 
 export default function ChessBoard() {
+    const [activePiece, setActivePiece] = useState<HTMLElement | null>(null);
     const [gridX, setGridX] = useState(0);
     const [gridY, setGridY] = useState(0);
     const [pieces, setPieces] = useState<Piece[]>(initialBoardState);
@@ -49,7 +50,7 @@ export default function ChessBoard() {
     const [boardSize, setBoardSize] = useState(280);
     const chessBoardRef = useRef<HTMLDivElement>(null);
 
-    let activePiece: HTMLElement | null = null;
+    
     let board = [];
 
     
@@ -84,17 +85,16 @@ export default function ChessBoard() {
         const element = e.target as HTMLElement;
         const chessBoard = chessBoardRef.current;
         if(element.classList.contains("chessPiece") && chessBoard){
-            const gridX = Math.floor((e.clientX - chessBoard.offsetLeft) / pieceSize);
-            const gridY = Math.abs(Math.ceil((e.clientY - chessBoard.offsetTop - boardSize) / pieceSize))
-            setGridX(gridX);
-            setGridY(gridY);
+            
+            setGridX(Math.floor((e.clientX - chessBoard.offsetLeft) / pieceSize));
+            setGridY(Math.abs(Math.ceil((e.clientY - chessBoard.offsetTop - boardSize) / pieceSize)));
             const x = e.clientX - Math.abs(Math.ceil(pieceSize / 2));
             const y = e.clientY - Math.abs(Math.ceil(pieceSize / 2));
             element.style.position = "absolute";
             element.style.left = `${x}px`;
             element.style.top = `${y}px`;
 
-            activePiece = element;
+            setActivePiece(element)
         }
     }
     function movePiece(e: React.MouseEvent) {
@@ -102,8 +102,8 @@ export default function ChessBoard() {
         if (activePiece && chessBoard) {
             const minX = chessBoard.offsetLeft - Math.abs(Math.ceil(pieceSize / 4));
             const minY = chessBoard.offsetTop - Math.abs(Math.ceil(pieceSize / 4));
-            const maxX = chessBoard.offsetLeft + chessBoard.clientWidth - 75;
-            const maxY = chessBoard.offsetTop + chessBoard.clientHeight - 75;
+            const maxX = chessBoard.offsetLeft + chessBoard.clientWidth - Math.abs(Math.ceil(pieceSize / 4) * 3);
+            const maxY = chessBoard.offsetTop + chessBoard.clientHeight - Math.abs(Math.ceil(pieceSize / 4) * 3);
             const x = e.clientX - Math.abs(Math.ceil(pieceSize / 2));
             const y = e.clientY - Math.abs(Math.ceil(pieceSize / 2));
             activePiece.style.position = "absolute";
@@ -146,7 +146,7 @@ export default function ChessBoard() {
                 });
                 return pieces
             });
-            activePiece = null;
+            setActivePiece(null);
         }
     }
     
