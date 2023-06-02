@@ -264,7 +264,46 @@ export default class Referee {
             }
         }
             return false;
+    }
+
+    queenMove(initialPosition: Position, desiredPosition: Position, team: TeamType, boardState: Piece[]): boolean {
+        for(let i = 1; i < 8; i++) {
+            // Diagnol
+            let multiplierX;// = (desirePosition.x < initialPosition.x) ? -1 : 1;
+            let multiplierY;// = (desiredPosition.y < intialPosition.y) ? -1 : 1;
+
+            if(desiredPosition.x < initialPosition.x) {
+                multiplierX = -1;
+            } else if(desiredPosition.x > initialPosition.x) {
+                multiplierX = 1;
+            } else {
+                // X value unchanged
+                multiplierX = 0;
+            }
+
+            if(desiredPosition.y < initialPosition.y) {
+                multiplierY = -1;
+            } else if(desiredPosition.y > initialPosition.y) {
+                multiplierY = 1;
+            } else {
+                // Y value unchanged
+                multiplierY = 0;
+            }
+
+            let passedPosition: Position = { x: initialPosition.x + (i * multiplierX), y: initialPosition.y + (i * multiplierY)};
+
+            if(samePosition(passedPosition, desiredPosition)) {
+                if(this.tileIsEmptyOrOccupiedByOpponent(passedPosition, boardState, team)) {
+                    return true;
+                }
+            } else {
+                if(this.tileIsOccupied(passedPosition, boardState)) {
+                    break;
+                }
+            }
         }
+        return false;
+    }
 
     isValidMove(
         initialPosition: Position,
@@ -286,6 +325,12 @@ export default class Referee {
                 break;
             case PieceType.ROOK:
                 validMove = this.rookMove(initialPosition, desiredPosition, team, boardState);
+                break;
+            case PieceType.QUEEN:
+                validMove = this.queenMove(initialPosition, desiredPosition, team, boardState);
+                break;
+            case PieceType.KING:
+                // Function for King
                 
         }
         return validMove;
