@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import '../styles/ChessBoard.css';
 import Tile from './Tile.tsx';
-import Referee from './Referee.ts';
+import Referee from './referee/Referee.ts';
 import { 
     VERTICAL_AXIS, 
     HORIZONTAL_AXIS, 
