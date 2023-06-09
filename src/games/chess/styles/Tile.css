@@ -6,11 +6,11 @@
 }
 
 .whiteTile{
-    background-color: rgb(132, 133, 133);
+    background-color: rgb(202, 202, 202);
     color: black;
 }
 .blackTile{
-    background-color: rgb(94, 44, 44);
+    background-color: rgb(128, 39, 39);
     color: black;
 }
 .chessTile .chessPiece{
@@ -28,11 +28,16 @@
 }
 
 .chessTileHighlight::before{
+    position: absolute;
     content: " ";
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgba(0,0,0,0.4);
+    width: 75px;
+    height: 75px;
+    /* border: 1px solid black; */
+    /* box-shadow: inset 2px 2px 2px 2px rgba(0, 238, 255, 0.808); */
+    -webkit-box-shadow: inset 0 0 30px #00f;
+    -moz-box-shadow: inset 0 0 30px #00f;
+    box-shadow: inset 0 0 30px #00f;
+    background-color: transparent;
 }
 
 /* ==== SMALL DEVICES ==== */

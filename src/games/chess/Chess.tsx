@@ -6,6 +6,7 @@ function Chess() {
 
     return(
         <div className="chess">
+            
             <ChessBoard  />
         </div>
     )
