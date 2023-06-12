@@ -11,7 +11,8 @@ export default function Tile({ number, image, highlight}: Props) {
         "chessTile", 
         number % 2 === 0 && "blackTile",
         number % 2 !== 0 && "whiteTile",
-        highlight && "chessTileHighlight"
+        highlight && "chessTileHighlight",
+        image && "chessPieceTile"
     ].filter(Boolean).join(' ');
     
     return (

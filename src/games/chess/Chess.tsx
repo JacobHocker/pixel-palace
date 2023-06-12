@@ -1,5 +1,5 @@
 import './styles/Chess.css';
-import ChessBoard from "./components/ChessBoard.tsx"
+import Referee from './components/Referee.tsx';
 
 function Chess() {
     
@@ -7,7 +7,7 @@ function Chess() {
     return(
         <div className="chess">
             
-            <ChessBoard  />
+            <Referee />
         </div>
     )
 }
