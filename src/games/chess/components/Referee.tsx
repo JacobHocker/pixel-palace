@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import { initialBoardState, Piece, PieceType, Position, samePosition, TeamType } from "../helpers/Constants.ts";
+import { initialBoardState,  PieceType, samePosition, TeamType } from "../helpers/Constants.ts";
+import { Piece } from "../models/Piece.ts";
+import { Position } from "../models/Position.ts";
 import Chessboard from "./ChessBoard.tsx";
 import { bishopMove, getPossibleBishopMoves } from "../helpers/referee/BishopRules.ts";
 import { pawnMove, getPossiblePawnMoves } from "../helpers/referee/PawnRules.ts";
@@ -51,7 +53,7 @@ export default function Referee() {
                     piece.position.y = destination.y;
                     results.push(piece);
                 } else if (
-                    !samePosition(piece.position, { x: destination.x, y: destination.y - pawnDirection })
+                    !samePosition(piece.position, new Position( destination.x,  destination.y - pawnDirection ))
                 ) {
                     if (piece.type === PieceType.PAWN) {
                         piece.enPassant = false;
@@ -84,7 +86,7 @@ export default function Referee() {
                         setPromotionPawn(piece);
                     }
                     results.push(piece);
-                } else if (!samePosition(piece.position, { x: destination.x, y: destination.y })) {
+                } else if (!samePosition(piece.position, new Position(  destination.x,  destination.y ))) {
                     if (piece.type === PieceType.PAWN) {
                         piece.enPassant = false;
                     }

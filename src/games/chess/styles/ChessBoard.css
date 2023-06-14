@@ -2,11 +2,12 @@
     width: 280px;
     height: 280px;
     background-color: transparent;
-    border: 5px solid rgb(150, 100, 67);
+    
     color: black;
     display: grid;
     grid-template-columns: repeat(8, 35px);
     grid-template-rows: repeat(8, 35px);
+    /* border: 5px solid rgb(150, 100, 67);
     box-shadow: 1px 1px 0px rgb(99, 67, 45),
                 2px 2px 0px rgb(99, 67, 45),
                 3px 3px 0px rgb(99, 67, 45),
@@ -14,8 +15,18 @@
                 5px 5px 0px rgb(99, 67, 45),
                 6px 6px 0px rgb(99, 67, 45),
                 7px 7px 0px rgb(99, 67, 45),
-                8px 8px 0px rgb(99, 67, 45);
+                8px 8px 0px rgb(99, 67, 45); */
+    border: 5px solid rgb(157, 157, 157);
+    box-shadow: 1px 1px 0px rgb(105, 105, 105),
+                2px 2px 0px rgb(105, 105, 105),
+                3px 3px 0px rgb(105, 105, 105),
+                4px 4px 0px rgb(105, 105, 105),
+                5px 5px 0px rgb(105, 105, 105),
+                6px 6px 0px rgb(105, 105, 105),
+                7px 7px 0px rgb(105, 105, 105),
+                8px 8px 0px rgb(105, 105, 105);
 }
+
 
 /* ==== PAWN PROMOTION MODAL ==== */
 #chessPawnPromotionModal {
