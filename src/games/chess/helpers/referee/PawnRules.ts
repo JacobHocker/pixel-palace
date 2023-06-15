@@ -1,7 +1,8 @@
-import {PieceType, samePosition,  TeamType} from '../Constants.ts';
+import { samePosition } from '../Constants.ts';
+import { TeamType } from '../Types.ts';
 import { Piece } from '../../models/Piece.ts';
 import { Position } from '../../models/Position.ts';
-import {tileIsOccupied, tileIsOccupiedByOpponent, tileIsEmptyOrOccupiedByOpponent} from './GeneralRules.ts';
+import {tileIsOccupied, tileIsOccupiedByOpponent} from './GeneralRules.ts';
 
 export const pawnMove = (initialPosition: Position, desiredPosition: Position, team: TeamType, boardState: Piece[]): boolean => {
     const specialRow = team === TeamType.OUR ? 1 : 6;
@@ -90,8 +91,8 @@ export const getPossiblePawnMoves = (pawn: Piece, boardState: Piece[]): Position
     if (tileIsOccupiedByOpponent(upperLeftAttack, boardState, pawn.team)) {
         possibleMoves.push(upperLeftAttack);
     } else if (!tileIsOccupied(upperLeftAttack, boardState)) {
-        const leftPiece = boardState.find(p => samePosition(p.position, leftPosition));
-        if (leftPiece != null && leftPiece.enPassant) {
+        const leftPiece = boardState.find(p => p.samePosition( leftPosition));
+        if (leftPiece != null) {//}&& leftPiece.enPassant) {
             possibleMoves.push(upperLeftAttack);
         }
     }
@@ -99,8 +100,8 @@ export const getPossiblePawnMoves = (pawn: Piece, boardState: Piece[]): Position
     if (tileIsOccupiedByOpponent(upperRightAttack, boardState, pawn.team)) {
         possibleMoves.push(upperRightAttack);
     } else if (!tileIsOccupied(upperRightAttack, boardState)) {
-        const rightPiece = boardState.find(p => samePosition(p.position, rightPosition));
-        if (rightPiece != null && rightPiece.enPassant) {
+        const rightPiece = boardState.find(p => p.samePosition( rightPosition));
+        if (rightPiece != null){//} && rightPiece.enPassant) {
             possibleMoves.push(upperRightAttack);
         }
     }
