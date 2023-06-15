@@ -1,3 +1,4 @@
+import { Board } from '../models/Board.ts';
 import { Piece } from '../models/Piece.ts';
 import { Position } from '../models/Position.ts';
 import { Pawn } from '../models/Pawn.ts';
@@ -12,7 +13,7 @@ export function samePosition(p1: Position, p2: Position) {
 }
 
 
-export const initialBoardState: Piece[] = [
+export const initialBoard: Board = new Board([
     new Piece(
     new Position(0, 7), 
     PieceType.ROOK, 
@@ -126,7 +127,7 @@ export const initialBoardState: Piece[] = [
     new Pawn(
     new Position(7, 1),
     TeamType.OUR),
-];
+]);
 
 
 
