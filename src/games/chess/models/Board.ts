@@ -1,6 +1,6 @@
 import { getPossibleBishopMoves } from '../helpers/referee/BishopRules.ts';
 import { getPossiblePawnMoves } from '../helpers/referee/PawnRules.ts';
-import { getPossibleKingMoves } from '../helpers/referee/KingRules.ts';
+import { getPossibleKingMoves, getCastlingMoves } from '../helpers/referee/KingRules.ts';
 import { getPossibleKnightMoves } from '../helpers/referee/KnightRules.ts';
 import { getPossibleQueenMoves } from '../helpers/referee/QueenRules.ts';
 import { getPossibleRookMoves } from '../helpers/referee/RookRules.ts';
@@ -12,6 +12,7 @@ import { Position } from './Position.ts';
 export class Board {
     pieces: Piece[];
     totalTurns: number;
+    winningTeam?: TeamType;
 
     constructor(pieces: Piece[], totalTurns: number) {
         this.pieces = pieces;
@@ -28,6 +29,13 @@ export class Board {
             piece.possibleMoves = this.getValidMoves(piece, this.pieces)
         }
 
+        // Calculate castling moves
+        for (const king of this.pieces.filter(p => p.isKing)) {
+            if(king.possibleMoves === undefined) continue;
+
+            king.possibleMoves = [...king.possibleMoves, ...getCastlingMoves(king, this.pieces)];
+        }
+
         // Check if the current team moves are valid
         this.checkCurrentTeamMoves();
 
@@ -36,6 +44,12 @@ export class Board {
             this.pieces.filter(p => p.team !== this.currentTeam)) {
             piece.possibleMoves = [];
         }
+
+        // Check if the playing team still has moves left
+        // Otherwise, Checkmate!
+        if(this.pieces.filter(p => p.team === this.currentTeam).some(p => p.possibleMoves !== undefined && p.possibleMoves.length > 0)) return;
+
+        this.winningTeam = (this.currentTeam === TeamType.OUR) ? TeamType.OPPONENT : TeamType.OUR;
     }
 
     checkCurrentTeamMoves() {
@@ -77,30 +91,32 @@ export class Board {
         }
     }
 
-    getValidMoves(piece: Piece, boardState: Piece[]): Position[] {
-        switch (piece.type) {
-            case PieceType.PAWN:
-                return getPossiblePawnMoves(piece, boardState);
-            case PieceType.KNIGHT:
-                return getPossibleKnightMoves(piece, boardState);
-            case PieceType.BISHOP:
-                return getPossibleBishopMoves(piece, boardState);
-            case PieceType.ROOK:
-                return getPossibleRookMoves(piece, boardState);
-            case PieceType.QUEEN:
-                return getPossibleQueenMoves(piece, boardState);
-            case PieceType.KING:
-                return getPossibleKingMoves(piece, boardState);
-            default:
-                return [];
-        }
-    }
-
     playMove(enPassantMove: boolean,
         validMove: boolean,
         playedPiece: Piece,
         destination: Position): boolean {
         const pawnDirection = playedPiece.team === TeamType.OUR ? 1 : -1;
+        const destinationPiece = this.pieces.find(p => p.samePosition(destination))
+
+        // If the move is a castling move do this
+        
+        if (playedPiece.isKing && destinationPiece?.isRook
+            && destinationPiece.team === playedPiece.team) {
+            const direction = (destinationPiece.position.x - playedPiece.position.x > 0) ? 1 : -1;
+            const newKingXPosition = playedPiece.position.x + direction * 2;
+            this.pieces = this.pieces.map(p => {
+                if (p.samePiecePosition(playedPiece)) {
+                    p.position.x = newKingXPosition;
+                } else if (p.samePiecePosition(destinationPiece)) {
+                    p.position.x = newKingXPosition - direction;
+                }
+
+                return p;
+            });
+
+            this.calculateAllMoves();
+            return true;
+        }
 
         if (enPassantMove) {
             this.pieces = this.pieces.reduce((results, piece) => {
@@ -109,6 +125,7 @@ export class Board {
                         (piece as Pawn).enPassant = false;
                     piece.position.x = destination.x;
                     piece.position.y = destination.y;
+                    piece.hasMoved = true;
                     results.push(piece);
                 } else if (
                     !piece.samePosition(new Position(destination.x, destination.y - pawnDirection))
@@ -136,6 +153,7 @@ export class Board {
                             piece.type === PieceType.PAWN;
                     piece.position.x = destination.x;
                     piece.position.y = destination.y;
+                    piece.hasMoved = true;
                     results.push(piece);
                 } else if (!piece.samePosition(destination)) {
                     if (piece.isPawn) {
@@ -155,6 +173,25 @@ export class Board {
         }
 
         return true;
+    }
+
+    getValidMoves(piece: Piece, boardState: Piece[]): Position[] {
+        switch (piece.type) {
+            case PieceType.PAWN:
+                return getPossiblePawnMoves(piece, boardState);
+            case PieceType.KNIGHT:
+                return getPossibleKnightMoves(piece, boardState);
+            case PieceType.BISHOP:
+                return getPossibleBishopMoves(piece, boardState);
+            case PieceType.ROOK:
+                return getPossibleRookMoves(piece, boardState);
+            case PieceType.QUEEN:
+                return getPossibleQueenMoves(piece, boardState);
+            case PieceType.KING:
+                return getPossibleKingMoves(piece, boardState);
+            default:
+                return [];
+        }
     }
 
     clone(): Board {

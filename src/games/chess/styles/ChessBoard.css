@@ -28,18 +28,18 @@
 }
 
 
-/* ==== PAWN PROMOTION MODAL ==== */
-#chessPawnPromotionModal {
+/* ==== MODAL ==== */
+.chessModal {
     position: absolute;
     top: 0px;
     right: 0px;
     left: 0px;
     bottom: 0px;
 }
-#chessPawnPromotionModal.hidden {
+.chessModal.hidden {
     display: none;
 }
-#chessPawnPromotionModal > .chessPromotionModalBody{
+.chessModal > .chessModalBody{
     position: absolute;
     top: calc(50% - 25px);
     left: calc(50% - 140px);
@@ -50,14 +50,14 @@
     width: 280px;
     height: 100px;
 }
-#chessPawnPromotionModal > .chessPromotionModalBody > .chessModalIcon{
+.chessModal > .chessModalBody > .chessModalIcon{
     padding: 0.5rem;
     border-radius: 50%;
     width: 2.25rem;
     background-color: rgba(134, 134, 134, 0.664);
     transition: 0.1s ease-in;
 }
-#chessPawnPromotionModal > .chessPromotionModalBody > .chessModalIcon:hover{
+.chessModal > .chessModalBody > .chessModalIcon:hover{
     cursor: pointer;
     background-color: rgb(117, 117, 117);
 }
@@ -71,13 +71,13 @@
         grid-template-columns: repeat(8, 50px);
         grid-template-rows: repeat(8, 50px);
     }
-    #chessPawnPromotionModal > .chessPromotionModalBody{
+    .chessModal > .chessModalBody{
         top: calc(50% - 50px);
         left: calc(50% - 200px);
         width: 400px;
         height: 150px;
     }
-    #chessPawnPromotionModal > .chessPromotionModalBody > .chessModalIcon{
+    .chessModal > .chessModalBody > .chessModalIcon{
         width: 3.5rem;
         padding: 0.75rem;
     }
@@ -91,13 +91,13 @@
         grid-template-columns: repeat(8, 75px);
         grid-template-rows: repeat(8, 75px);
     }
-    #chessPawnPromotionModal > .chessPromotionModalBody{
+    .chessModal > .chessModalBody{
         top: calc(50% - 100px);
         left: calc(50% - 300px);
         width: 600px;
         height: 200px;
     }
-    #chessPawnPromotionModal > .chessPromotionModalBody > .chessModalIcon{
+    .chessModal > .chessModalBody > .chessModalIcon{
         width: 4rem;
         padding: 1rem;
     }
@@ -110,13 +110,13 @@
         grid-template-columns: repeat(8, 100px);
         grid-template-rows: repeat(8, 100px);
     }
-    #chessPawnPromotionModal > .chessPromotionModalBody{
+    .chessModal > .chessModalBody{
         top: calc(50% - 100px);
         left: calc(50% - 400px);
         width: 800px;
         height: 250px;
     }
-    #chessPawnPromotionModal > .chessPromotionModalBody > .chessModalIcon{
+    .chessModal > .chessModalBody > .chessModalIcon{
         width: 4.5rem;
         padding: 1rem;
     }

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {  useRef, useState } from "react";
 import { initialBoard } from "../helpers/Constants.ts";
 import { Piece } from "../models/Piece.ts";
 import { Position } from "../models/Position.ts";
@@ -14,13 +14,11 @@ import { rookMove, getPossibleRookMoves } from "../helpers/referee/RookRules.ts"
 import { PieceType, TeamType } from "../helpers/Types.ts";
 
 export default function Referee() {
-    const [board, setBoard] = useState<Board>(initialBoard);
+    const [board, setBoard] = useState<Board>(initialBoard.clone());
     const [promotionPawn, setPromotionPawn] = useState<Piece>();
     const modalRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        board.calculateAllMoves();
-    }, [])
+    const checkmateModalRef = useRef<HTMLDivElement>(null);
+    
 
     
 
@@ -49,13 +47,17 @@ export default function Referee() {
 
         // playMove modifies the board thus we
         // need to call setBoard
-        setBoard((previousBoard) => {
+        setBoard(() => {
             const clonedBoard = board.clone();
             clonedBoard.totalTurns += 1;
             // Playing the move
             playedMoveIsValid = clonedBoard.playMove(enPassantMove,
                 validMove, playedPiece,
                 destination);
+
+            if(clonedBoard.winningTeam !== undefined) {
+                checkmateModalRef.current?.classList.remove("hidden")
+            }
 
             return clonedBoard;
         })
@@ -107,12 +109,8 @@ export default function Referee() {
     }
 
     //TODO
-    //Pawn promotion!
-    //Prevent the king from moving into danger!
-    //Add castling!
-    //Add check!
-    //Add checkmate!
     //Add stalemate!
+
     function isValidMove(initialPosition: Position, desiredPosition: Position, type: PieceType, team: TeamType) {
         let validMove = false;
         switch (type) {
@@ -148,7 +146,7 @@ export default function Referee() {
             clonedBoard.pieces = clonedBoard.pieces.reduce((results, piece) => {
                 if (piece.samePiecePosition(promotionPawn)) {
                     results.push(new Piece(piece.position.clone(), pieceType,
-                        piece.team));
+                        piece.team, true));
                 } else {
                     results.push(piece);
                 }
@@ -167,16 +165,30 @@ export default function Referee() {
         return (promotionPawn?.team === TeamType.OUR) ? "w" : "b";
     }
 
+    function restartGame() {
+        checkmateModalRef.current?.classList.add("hidden");
+        setBoard(initialBoard.clone());
+    }
+
     return(
         <>
-            <div id="chessPawnPromotionModal" className="hidden" ref={modalRef}>
-                <div className="chessPromotionModalBody">
+            <p>Total Turns: {board.totalTurns}</p>
+            <div className="chessModal hidden"  ref={modalRef}>
+                <div className="chessModalBody">
                     <img src={`/assets/images/rook_${promotionTeamType()}.png`} onClick={() => promotePawn(PieceType.ROOK)} className='chessModalIcon' />
                     <img src={`/assets/images/bishop_${promotionTeamType()}.png`} onClick={() => promotePawn(PieceType.BISHOP)} className='chessModalIcon' />
                     <img src={`/assets/images/knight_${promotionTeamType()}.png`} onClick={() => promotePawn(PieceType.KNIGHT)} className='chessModalIcon' />
                     <img src={`/assets/images/queen_${promotionTeamType()}.png`} onClick={() => promotePawn(PieceType.QUEEN)} className='chessModalIcon' />
                 </div>
             </div>
+            <div className="chessModal hidden" ref={checkmateModalRef}>
+                <div className="chessCheckmateBody">
+                    <h1>Checkmate!</h1>
+                    <span>{board.winningTeam === TeamType.OUR ? "WHITE" : "BLACK"} WINS!</span>
+                    <button onClick={restartGame}>Play Again!</button>
+                </div>
+            </div>
+            
             <Chessboard playMove={playMove} pieces={board.pieces} />
         </>
     )
