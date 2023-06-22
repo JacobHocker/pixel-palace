@@ -6,7 +6,6 @@ function Chess() {
 
     return(
         <div className="chess">
-            
             <Referee />
         </div>
     )
