@@ -6,6 +6,7 @@ import GameChoices from '../components/GameChoices';
 import ThemeButton from '../components/ThemeButton';
 
 
+
 const Home = ({ setBg, bg }) => {
     
 
@@ -75,6 +76,8 @@ const Home = ({ setBg, bg }) => {
                 <GameChoices />
                 
             </div>
+
+            
             
         </main>
     )
