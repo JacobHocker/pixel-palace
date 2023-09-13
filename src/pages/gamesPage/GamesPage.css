@@ -8,6 +8,7 @@
     height: 100%;
     margin: 0;
     padding-bottom: 12rem;
+    overflow-x: hidden;
 }
 
 /* ==== GAME PAGE HEADER ==== */

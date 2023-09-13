@@ -4,6 +4,7 @@ import { GamesInfo } from '../../assets/helpers/gameInfo';
 import GameInfoCard from '../../components/GameInfoCard';
 
 const GamesPage = () => {
+    
     return (
         <main className='gamesPageContainer'>
             <div className='gamesPageHeader'>
@@ -17,7 +18,9 @@ const GamesPage = () => {
                         title={game.title}
                         img={game.img}
                         inSiteLink={game.link}
-
+                        history={game.history}
+                        objective={game.objective}
+                        wiki={game.wikiLink}
                     />
                 ))}
             </div>

@@ -1,6 +1,6 @@
 import Tetris from '../imgs/tetris.jpeg';
 import Wordle from '../imgs/wordle.webp';
-import Klotski from '../imgs/sliderPuzzle.png';
+import Klotski from '../imgs/klotskiImg.png';
 import Chess from '../imgs/chess.png';
 
 export const GamesInfo = [
@@ -36,8 +36,8 @@ export const GamesInfo = [
         title: 'Chess',
         img: `${Chess}`,
         link: '/chess',
-        history: "",
-        objective: "",
-        wikiLink: "",
+        history: "The origins of chess date from the begining of the seventh century. It was introduced to Persia by Dewasarm the ruler of India. The oldest known chess manual was in Arabic dates to about 840.  The origins are debated whether to be Persian or Indian, but despite this fact chess is one of the oldest games in our history.",
+        objective: "While the explaination for chess is complex and has some of the greatest complex theories and mental strategies.  The goal is simple, corner the opposing King into a tile where he has no moves left with out being attacked.  This is called CHECKMATE and results in the attacking player winning the match.",
+        wikiLink: "https://en.wikipedia.org/wiki/Chess",
     },
 ]

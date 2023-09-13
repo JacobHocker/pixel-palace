@@ -1,28 +1,100 @@
 /* ==== GAME INFO CARD ==== */
 .gameInfoCard{
-    width: 100%;
+    width: 90%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 3px solid white;
+    border-radius: 5px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+/* ==== GAME INFO IMAGE ==== */
+.gameInfoImgContainer{
+    width: 90%;
+    margin-top: 1rem;
+}
+.gameInfoThumbnail{
+    width: 100%;
+    border-radius: 5px;
+}
+/* ==== GAME INFO TITLE ==== */
+.gameInfoTitle{
+    font-size: 1rem;
+    font-family: Pixel;
+}
+/* ==== GAME INFO HISTORY ==== */
+.gameHistoryContainer{
+    width: 85%;
+}
+.gameHistoryContainer h3{
+    font-family: PressStart;
+}
+/* ==== GAME INFO OBJECTIVE ==== */
+.gameObjectiveContainer{
+    width: 95%;
+}
+.gameObjectiveContainer h3{
+    font-family: PressStart;
+}
+/* ==== GAME INFO LINK ==== */
+.gameLinkContainer{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.gameLinkBtn{
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    font-family: PressStart;
+    background: transparent;
+    outline: none;
     border: 2px solid white;
+    color: white;
+    
+    border-radius: 10px;
+}
+.gameLinkBtn:hover{
+    cursor: pointer;
+}
+.wikiLinkBtn{
+    padding: 0.75rem;
+    margin-top: 1rem;
+    font-family: PressStart;
+    background: transparent;
+    outline: none;
+    border: 2px solid white;
+    color: white;
+    
+    border-radius: 10px;
+}
+.wikiLinkBtn:hover{
+    cursor: pointer;
 }
 
-.gameInfoThumbnail{
-    width: 2rem;
-}
 
 
 
 
 /* ==== SMALL DEVICES ==== */
 @media screen and (min-width: 500px) and (max-width: 768px){
-    
+    .gameInfoCard{
+        width: 80%;
+    }
 }
 /* ==== MEDIUM DEVICES ==== */
 @media screen and (min-width: 768px) and (max-width: 1024px){
-    
+    .gameInfoCard{
+        width: 60%;
+    }
 }
 /* ==== LARGE DEVICES ==== */
 @media screen and (min-width: 1024px) {
-    
+    .gameInfoCard{
+        width: 40%;
+    }
 }
