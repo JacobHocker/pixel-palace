@@ -5,11 +5,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20rem;
+    padding-bottom: 10rem;
 }
 
 .aboutHeader{
     font-size: 1.5rem;
+}
+.aboutInfo{
+    width: 90%;
 }
 .aboutContent{
     display: flex;
@@ -17,6 +20,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-top: 5rem;
 }
 .aboutBuiltWith{
     margin-top: 2rem;
@@ -25,20 +29,50 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:  #8600d4c6;
+    background-color:  #d451009d;
 }
-
+.aboutContact{
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 0.5rem;
+    margin-top: 1.5rem;
+}
 
 
 /* ==== SMALL DEVICES ==== */
 @media screen and (min-width: 500px) and (max-width: 768px){
-    
+    .aboutHeader{
+        font-size: 1.75rem
+    }
+    .aboutBuiltWith{
+        width: 60%;
+        border-radius: 10px;
+    }
+    .aboutInfo{
+        width: 80%;
+    }
 }
 /* ==== MEDIUM DEVICES ==== */
 @media screen and (min-width: 768px) and (max-width: 1024px){
-    
+    .aboutHeader{
+        font-size: 2rem
+    }
+    .aboutBuiltWith{
+        width: 40%;
+        border-radius: 10px;
+    }
+    .aboutInfo{
+        width: 70%;
+    }
 }
 /* ==== LARGE DEVICES ==== */
 @media screen and (min-width: 1024px) {
-    
+    .aboutBuiltWith{
+        width: 30%;
+        border-radius: 10px;
+    }
+    .aboutInfo{
+        width: 60%;
+    }
 }
