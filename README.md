@@ -1,6 +1,8 @@
 # Pixel Palace
 An enjoyable arcade full of the most known & fun games. 
 
+### [Visit Pixel Palace](https://pixel-palace.vercel.app/)
+
 ### Built with 
 -   React
 - CSS
